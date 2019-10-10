@@ -1,54 +1,76 @@
- <!DOCTYPE html>
-  <html>
-	<head>
- <!--Import Google Icon Font-->
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="cssJoe.css" rel="stylesheet">
-    
-	</head>
-	<body>
-   <!------------ Thanks Daniel Almeida for the reference  ----------->
-<!-- https://dribbble.com/shots/4027518-Login-screen-interaction -->
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-left">
+        <canvas id="canvas"></canvas>
+        <div class="h1">JOE</div>
+      </div>
+      <div class="login-right">
+        <h1>JOE</h1>
+        <ul id="tabs-swipe-demo" class="tabs">
+          <li class="tab col s6"><a  href="#login" class="active titleCss">LOGIN</a></li>
+          <li class="tab col s6"><a class=" titleCss" href="#cadastro">Cadastre-se!</a></li>
+        </ul>
 
-<div class="login-wrapper">
-  <div class="login-left">
-    <img src="http://res.cloudinary.com/dzqowkhxu/image/upload/v1513679279/bg-login_bxxfkf.png">
-    <div class="h1">JOE</div>
-  </div>
-  <div class="login-right">
-      <ul id="tabs-swipe-demo" class="tabs">
-          <li class="tab col s3"><a href="#test-swipe-1" class="active">Test 1</a></li>
-          <li class="tab col s3"><a class="" href="#test-swipe-2">Test 2</a></li>
-        <li class="indicator" style="left: 0px; right: 443px;"></li></ul>
-        <div class="tabs-content carousel carousel-slider" style="height: 400px;">
-          <div id="test-swipe-1" class="col s12 blue carousel-item active" 
-          style="z-index: 0; opacity: 1; visibility: visible; transform: translateX(0px) ranslateX(0px) translateX(0px) translateZ(0px);">
-            <div class="form-group">
-            <input type="text" id="Email" placeholder="Email">
-            <label for="Email">Email</label>    
-          </div>
-          <div class="form-group">
-            <input type="password" id="Password" placeholder="Password">
-            <label for="Password">Password</label>    
-          </div>
+        <div class="tabs-content carousel carousel-slider">
+    <!-- ===================LOGIN ============ -->
+          <form action="">
+            <div id="login" class=" carousel-item active" 
+            style="z-index: 0; opacity: 1; visibility: visible;">
+              <div class="form-group">
+                <input type="text" id="email" placeholder="E-mail" required>
+                <label for="email">E-mail</label>    
+              </div>
+              <div class="form-group">
+                <input type="password" id="password" placeholder="Senha" required>
+                <label for="password">Senha</label>    
+              </div>
+              <div class="button-area">
+                <button type="submit" class="btn btn-secondary white">Login</button>
+              </div>
+            </div>
+          </form>
+<!-- ===================CADASTRP ============ -->
+          <form action="">
+            <div id="cadastro" class="  carousel-item" style="z-index: 0;  opacity: 1; visibility: visible;">
+              <div class="form-group">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <label for="nome">Nome</label>    
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>    
+              </div>
+              <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <label for="password">Senha</label>    
+              </div>                            
+            <!--  <div class="form-group">
+                <input type="password" id="passwordValidate" placeholder="Senha novamente" required>
+                <label for="passwordValidate">Senha novamente</label>    
+              </div> -->
+              <div class="form-group">
+                <input type="text" id="nomeEmpresa" placeholder="Nome da empresa" required>
+                <label for="nomeEmpresa">Nome da empresa</label>    
+              </div>
+              <div class="button-area">
+                <button type="submit" class="btn btn-primary">Cadastre-se!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+  <script type="text/javascript" src="jsJoe.js"></script>
+  <script type="text/javascript" src="jsBackground.js"></script>
 
-          <div class="button-area">
-            <button class="btn btn-secondary">Login</button>
-            <button class="btn btn-primary"  href="#oi ">Cadastre-se!</button>
-          </div></div>
-          <div id="test-swipe-2" class="col s12 red carousel-item" style="transform: translateX(0px)
-           translateX(589px) translateZ(0px); z-index: -1; opacity: 1; visibility: visible;">
-           Test 2</div>
-</div>
-</body>
-
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
-
-
-<script type="text/javascript" src="jsJoe.js"></script>
-
-  </html>
-
+</html>
