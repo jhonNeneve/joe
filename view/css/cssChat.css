@@ -12,12 +12,12 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
 }
- 
+
 ::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: rgba(25,147,147,0.1);
 }
- 
+
 ::-webkit-scrollbar-thumb {
      border-radius: 10px;
     background-color: rgba(25,147,147,0.2);
@@ -67,7 +67,7 @@ body {
 	-moz-animation: show-chat-odd 0.15s 1 ease-in;
 	-webkit-animation: show-chat-odd 0.15s 1 ease-in;
 	float: right;
-	margin-right: #{50px + 30px};
+	margin-right: 80px;
 	color: #0AD5C1;
 }
 
@@ -101,10 +101,14 @@ body {
 	border-left: 15px solid transparent;
 	left: -15px;
 }
+.container{
+	width: 100% !important;
+	height: 100% !important;
+}
 
 .chat-window {
-	position: fixed;
-	bottom: 18px;
+	position: absolute;
+	bottom: 38px;
 }
 
 .chat-window-message {
@@ -130,6 +134,7 @@ body {
 	.chat-window {
 		left: 5%;
 		width: 90%;
+
 	}
 }
 
@@ -201,3 +206,4 @@ body {
     margin-right: 0;
   }
 }
+
