@@ -4,9 +4,9 @@ $(document).ready(function(){
 var header = document.getElementById("header");
 header.innerHTML += '<nav>'+
                         '<div class="nav-wrapper white">'+
-                            '<a href="#" class="brand-logo right colorText">Joe</a>'+
-                            '<ul class="left hide-on-med-and-down">'+
-                            '<li><a href="sass.html" class="colorText">Sass</a></li>'+
+                            '<a href="#" class="brand-logo center colorText ">Joe</a>'+
+                            '<ul class="right hide-on-med-and-down">'+
+                            '<li><a href="sass.html" class="colorText">Sair</a></li>'+
                             '</ul>'+
                         '</div>'+
                     '</nav>';
