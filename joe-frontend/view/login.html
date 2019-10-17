@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="css/cssLogin.css" rel="stylesheet">
+    <title>Joe</title>
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-left">
+        <canvas id="canvas"></canvas>
+        <div class="h1">JOE</div>
+      </div>
+      <div class="login-right">
+        <h1>JOE</h1>
+        <ul id="tabs-swipe-demo" class="tabs">
+          <li class="tab col s6"><a  href="#login" class="active titleCss">LOGIN</a></li>
+          <li class="tab col s6"><a class=" titleCss" href="#contato">Contato</a></li>
+        </ul>
+
+        <div class="tabs-content carousel carousel-slider">
+    <!-- ===================LOGIN ============ -->
+          <form action="">
+            <div id="login" class=" carousel-item active" 
+            style="z-index: 0; opacity: 1; visibility: visible;">
+              <div class="form-group">
+                <input type="text" id="email" placeholder="E-mail" required>
+                <label for="email">E-mail</label>    
+              </div>
+              <div class="form-group">
+                <input type="password" id="password" placeholder="Senha" required>
+                <label for="password">Senha</label>    
+              </div>
+              <div class="button-area">
+                <button type="submit" class="btn btn-secondary white">Entrar no Chat</button>
+               
+              </div>
+            </div>
+          </form>
+<!-- ===================CONTATO ============ -->
+          <form action="">
+            <div id="contato" class="  carousel-item" style="z-index: 0;  opacity: 1; visibility: visible;">
+              <div class="form-group">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <label for="nome">Nome</label>    
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>    
+              </div>
+              <div class="form-group">
+                <input type="text" id="nomeEmpresa" placeholder="Nome da empresa" required>
+                <label for="nomeEmpresa">Nome da empresa</label>    
+              </div>
+              <div class="button-area">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+  <script type="text/javascript" src="js/jsLogin.js"></script>
+  <script type="text/javascript" src="js/jsBackground.js"></script>
+</html>
