@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>temp</title>
+</head>
+<body>
+	<textarea id="text"></textarea>
+	<button id="send">send</button>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#send').click(function() {
+				$.ajax({
+					url: 'salvarTxt.php',
+					type: 'post',
+					data: {
+						texto: $('#text').val()
+					},
+					success: function (resp) {
+						console.log(resp);
+					}
+				});
+			});
+		})
+	</script>
+</body>
+</html>
