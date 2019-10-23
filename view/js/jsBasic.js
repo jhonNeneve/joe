@@ -1,20 +1,20 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
   });
-var menu = document.getElementById("menu");
-menu.innerHTML += '<ul id="slide-out" class="sidenav sidenav-fixed">'+
-                        '<li>'+
-                            '<div class="user-view">'+
-                                '<div class="background">'+
-                                    '<img src="images/office.jpg">'+
-                                '</div>'+
-                            '</div>'+
-                        '</li>'+
-                        '<li><a onclick="menu("home")"><i class="material-icons">home</i>Home</a></li>'+
-                        '<li><a onclick="menu("module")">Módulo</a></li>'+
-                        '<li><a onclick="menu("flow")">Fluxograma</a></li>'+
-                    '</ul>'+
-                    '<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>';
+// var menu = document.getElementById("menu");
+// menu.innerHTML += '<ul id="slide-out" class="sidenav sidenav-fixed">'+
+//                         '<li>'+
+//                             '<div class="user-view">'+
+//                                 '<div class="background">'+
+//                                     '<img src="images/office.jpg">'+
+//                                 '</div>'+
+//                             '</div>'+
+//                         '</li>'+
+//                         '<li><a onclick="menu("home")"><i class="material-icons">home</i>Home</a></li>'+
+//                         '<li><a onclick="menu("module")">Módulo</a></li>'+
+//                         '<li><a onclick="menu("flow")">Fluxograma</a></li>'+
+//                     '</ul>'+
+//                     '<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>';
 
 var header = document.getElementById("header");
 header.innerHTML += '<nav style="display: absolute;">'+
