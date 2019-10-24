@@ -17,7 +17,7 @@ $(document).ready(function(){
 //                     '<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>';
 
 var header = document.getElementById("header");
-header.innerHTML += '<nav style="display: absolute;">'+
+header.innerHTML += '<nav class="top-nav">'+
                         '<div class="nav-wrapper white">'+
                             '<a href="#" class="brand-logo center colorText ">Joe</a>'+
                             '<ul class="right hide-on-med-and-down">'+
