@@ -4,29 +4,23 @@
 <head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
-	</link>
 	<link rel="stylesheet" type="text/css" href="css/cssTeach.css">
-	</link>
-
+	<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
 	<title>Chat Joe</title>
 </head>
 
 <body>
 	<div id="header"></div>
 	<ul id="slide-out" class="sidenav sidenav-fixed">
-		<li>
-			<div class="user-view">
-				<div class="background">
-					<img src="images/office.jpg">
-				</div>
-			</div>
-		</li>
-		<li><a onclick="menu('home')"><i class="material-icons">home</i>Home</a></li>
-		<li><a onclick="menu('module')">Módulo</a></li>
-		<li><a onclick="menu('flow')">Fluxograma</a></li>
+		<li><a onclick="menu('home')" href="javascript:void(0)"><i class="material-icons">home</i>Home</a></li>
+		<li><a onclick="menu('module')" href="javascript:void(0)"><i class="material-icons">dns</i>Módulo</a></li>
+		<li><a onclick="menu('flow')" href="javascript:void(0)"><i class="material-icons">account_tree</i>Fluxograma</a></li>
 	</ul>
+	<section style="margin-left:207px;padding: 20px;" >
+			<div class="card blue"></div>
+		</section>
 	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
 	<div id="footer"></div>
 </body>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

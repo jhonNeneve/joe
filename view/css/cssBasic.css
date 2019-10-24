@@ -6,8 +6,38 @@ body {
 
   main {
     flex: 1 0 auto !important;
+    padding-left: 300px !important;
+
   }
 
   .colorText{
     color:#651fff !important;
   }
+
+  nav.top-nav {
+    height: 64px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0,0,0,0.14);
+    background-color: transparent;
+
+}
+
+ul.sidenav.sidenav-fixed {
+  overflow: hidden;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-right: 1px solid rgba(0,0,0,0.14);
+  width: 207px;
+   /* position: sticky;
+  top: 0px; */
+  margin-top: 64px;
+}
+
+/* .sidenav {
+  top: 55px;
+  display: inline;
+} */
+
+
+
