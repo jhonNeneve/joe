@@ -21,7 +21,7 @@ header.innerHTML += '<nav class="top-nav">'+
                         '<div class="nav-wrapper white">'+
                             '<a href="#" class="brand-logo center colorText ">Joe</a>'+
                             '<ul class="right hide-on-med-and-down">'+
-                            '<li><a href="sass.html" class="colorText">Sair</a></li>'+
+                            '<li><a href="login.html" class="colorText">Sair</a></li>'+
                             '</ul>'+
                         '</div>'+
                     '</nav>';
