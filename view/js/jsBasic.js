@@ -17,14 +17,16 @@ $(document).ready(function(){
 //                     '<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>';
 
 var header = document.getElementById("header");
-header.innerHTML += '<nav class="top-nav">'+
-                        '<div class="nav-wrapper white">'+
-                            '<a href="#" class="brand-logo center colorText ">Joe</a>'+
-                            '<ul class="right hide-on-med-and-down">'+
-                            '<li><a href="login.html" class="colorText">Sair</a></li>'+
-                            '</ul>'+
-                        '</div>'+
-                    '</nav>';
+header.innerHTML +=   '<div class="navbar-fixed">' +
+                        '<nav>' +
+                          '<div class="nav-wrapper white">' +
+                            '<a href="#" class="brand-logo center colorText ">Joe</a>' +
+                            '<ul class="right hide-on-med-and-down">' +
+                              '<li><a href="login.html" class="colorText">Sair</a></li>' +
+                            '</ul>' +
+                          '</div>' +
+                        '</nav>' +
+                      '</div>';
 
 var footer = document.getElementById("footer");
 footer.innerHTML += '<footer class="page-footer white">'+
