@@ -2,12 +2,13 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
   });
  var menu = document.getElementById("menu");
- menu.innerHTML += '<ul id="slide-out" class="sidenav sidenav-fixed deep-purple lighten-5">'+
- '<li><a onclick="menu(\'home\')" href="javascript:void(0)"><i class="material-icons">home</i>Home</a></li>'+
- '<li><a onclick="menu(\'module\')" href="javascript:void(0)"><i class="material-icons">dns</i>Módulo</a></li>'+
- '<li><a onclick="menu(\'flow\')" href="javascript:void(0)"><i class="material-icons">account_tree</i>Fluxograma</a></li>'+
-'</ul>';
-
+ if(menu != null){
+    menu.innerHTML += '<ul id="slide-out" class="sidenav sidenav-fixed deep-purple lighten-5">'+
+                        '<li><a onclick="menu(\'home\')" href="javascript:void(0)"><i class="material-icons">home</i>Home</a></li>'+
+                        '<li><a onclick="menu(\'module\')" href="javascript:void(0)"><i class="material-icons">dns</i>Módulo</a></li>'+
+                        '<li><a onclick="menu(\'flow\')" href="javascript:void(0)"><i class="material-icons">account_tree</i>Fluxograma</a></li>'+
+                      '</ul>';
+}
 var header = document.getElementById("header");
 header.innerHTML +=   '<div class="navbar-fixed">' +
                         '<nav>' +
