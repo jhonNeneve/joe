@@ -1,9 +1,6 @@
-.card{
-    height: 635px !important;
-    width: 85% !important;
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto; */
+.card {
+    height: 440px !important;
+    width: 95% !important;
 }
 #header{
     z-index:1000;

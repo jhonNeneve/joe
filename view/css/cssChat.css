@@ -3,8 +3,8 @@
 body {
 	padding: 0;
 	margin: 0;
-	background: -moz-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(206, 187, 245) 50%, #d1c4e9 75%, #ede7f6 100%);
-	background: -webkit-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(206, 187, 245) 50%, #d1c4e9 75%, #ede7f6 100%);
+	background: -moz-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(228, 214, 255) 50%, #d1c4e9 75%, #ede7f6 100%);
+	background: -webkit-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(228, 214, 255) 50%, #d1c4e9 75%, #ede7f6 100%);
 	background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: #ede7f6;
@@ -23,12 +23,12 @@ body {
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: rgba(25,147,147,0.1);
+    background-color:#b39ddb;
 }
 
 ::-webkit-scrollbar-thumb {
      border-radius: 10px;
-    background-color: rgba(25,147,147,0.2);
+    background-color: #673ab7;
 }
 
 .chat-thread {
@@ -47,7 +47,7 @@ body {
 	margin: 0 0 20px 0;
 	font: 16px/20px 'Noto Sans', sans-serif;
 	border-radius: 10px;
-	background-color: rgba(25,147,147,0.2);
+	background-color:#f9f9f98a;
 }
 
 /* Chat - Avatar */
@@ -67,7 +67,7 @@ body {
 	content: '';
 	width: 0;
 	height: 0;
-	border-top: 15px solid rgba(25,147,147,0.2);
+	border-top: 15px solid #f9f9f98a;
 }
 
 .chat-thread li:nth-child(odd) {
