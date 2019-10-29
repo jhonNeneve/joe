@@ -19,18 +19,18 @@ $(document).ready(function(){
 var header = document.getElementById("header");
 header.innerHTML +=   '<div class="navbar-fixed">' +
                         '<nav>' +
-                          '<div class="nav-wrapper white">' +
-                            '<a href="#" class="brand-logo center colorText ">Joe</a>' +
+                          '<div class="nav-wrapper deep-purple">' +
+                            '<a href="#" class="brand-logo center white-text ">Joe</a>' +
                             '<ul class="right hide-on-med-and-down">' +
-                              '<li><a href="login.html" class="colorText">Sair</a></li>' +
+                              '<li><a href="login.html" class="white-text">Sair</a></li>' +
                             '</ul>' +
                           '</div>' +
                         '</nav>' +
                       '</div>';
 
 var footer = document.getElementById("footer");
-footer.innerHTML += '<footer class="page-footer white">'+
+footer.innerHTML += '<footer class="page-footer deep-purple">'+
                         '<div class="footer-copyright">'+
-                            '<div class="container colorText">© 2015 Copyright</div>'+
+                            '<div class="container white-text">© 2019 Copyright</div>'+
                         '</div>'+
                     '</footer>';

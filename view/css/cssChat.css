@@ -3,13 +3,20 @@
 body {
 	padding: 0;
 	margin: 0;
-	/* background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
-	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%); */
+	background: -moz-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(206, 187, 245) 50%, #d1c4e9 75%, #ede7f6 100%);
+	background: -webkit-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(206, 187, 245) 50%, #d1c4e9 75%, #ede7f6 100%);
 	background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #d1c4e9;
+  background-color: #ede7f6;
 }
 
+.card {
+	width: 65%;
+	height: 10%;
+	margin-left: 20%;
+	padding-top: 1px;
+    padding-bottom: 20px;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -102,14 +109,11 @@ body {
 	border-left: 15px solid transparent;
 	left: -15px;
 }
-.container{
-	width: 100% !important;
-	height: 100% !important;
-}
+
 
 .chat-window {
-	position: absolute;
-	bottom: 38px;
+	position: relative;
+
 }
 
 .chat-window-message {
@@ -142,18 +146,17 @@ body {
 /* Medium and large screens */
 @media all and (min-width: 768px) {
 	.chat-thread {
-		width: 50%;
+		width: 85%;
 		height: 400px;
 	}
 
 	.chat-window {
-		left: 25%;
-		width: 50%;
+		left: 10%;
+		width: 82%;
 	}
 }
 
-/* // Animation
-// -------------------------------------- */
+/* // Animation // -------------------------------------- */
 @keyframes show-chat-even {
   0% {
     margin-left: -480px;
