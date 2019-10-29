@@ -3,10 +3,11 @@
 body {
 	padding: 0;
 	margin: 0;
-	background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
-	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+	/* background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%); */
 	background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: #d1c4e9;
 }
 
 ::-webkit-scrollbar {
@@ -68,7 +69,7 @@ body {
 	-webkit-animation: show-chat-odd 0.15s 1 ease-in;
 	float: right;
 	margin-right: 80px;
-	color: #0AD5C1;
+	color: #4527a0;
 }
 
 .chat-thread li:nth-child(odd):before {
@@ -88,7 +89,7 @@ body {
 	-webkit-animation: show-chat-even 0.15s 1 ease-in;
 	float: left;
 	margin-left: 80px;
-	color: #0EC879;
+	/* color: #0EC879; */
 }
 
 .chat-thread li:nth-child(even):before {
@@ -116,7 +117,7 @@ body {
 	height: 48px;
 	font: 32px/48px 'Noto Sans', sans-serif;
 	background: none;
-	color: #0AD5C1;
+	color: #4527a0;
 	border: 0;
 	border-bottom: 1px solid rgba(25,147,147,0.2);
 	outline: none;
