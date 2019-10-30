@@ -29,7 +29,7 @@ header.innerHTML +=   '<div class="navbar-fixed">' +
                       '</div>';
 
 var footer = document.getElementById("footer");
-footer.innerHTML += '<footer class="page-footer white">'+
+footer.innerHTML += '<footer class="page-footer white" style="padding: 0;">'+
                         '<div class="footer-copyright">'+
                             '<div class="container colorText">© 2015 Copyright</div>'+
                         '</div>'+
