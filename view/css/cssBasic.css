@@ -49,7 +49,10 @@ ul.sidenav.sidenav-fixed {
     text-align: center;
   }
 
-  header, main, footer {
+  /* header, main, footer {
     padding-left: 207px !important;
-  }
+  } */
 
+.sectionCSS{
+  margin-left: 220px;
+}
