@@ -104,7 +104,7 @@
     $flowchart.panzoom('pan', -cx + $container.width() / 2, -cy + $container.height() / 2);
 
     // Panzoom zoom handling...
-    var possibleZooms = [0, 0, 0, 0, 0];
+    var possibleZooms = [0.5, 0.75, 1, 2, 3];
     var currentZoom = 2;
     $container.on('mousewheel.focal', function( e ) {
     	e.preventDefault();
