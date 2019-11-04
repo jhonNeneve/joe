@@ -2,51 +2,71 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
-</link>
-<link rel="stylesheet" type="text/css" href="css/cssTeach.css">
-</link>
-<!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
-<link rel="stylesheet" type="text/css" href="http://sebastien.drouyer.com/jquery.flowchart-demo/jquery.flowchart/jquery.flowchart.min.css"></link>
-<link rel="stylesheet" type="text/css" href="http://sebastien.drouyer.com/jquery.flowchart-demo/stylesheets/custom.css"></link>
+	<link rel="stylesheet" href="css/lib/materialize/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/lib/jquery/jquery.flowchart.min.css"></link>
 
-<title>Chat Joe</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/cssHome.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/cssBasic.css"></link>
+	<!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
+
+	<title>Chat Joe</title>
 </head>
 
-<body>
+<body style="position: relative; padding-bottom: 50px;">
+	<div id="loading">
+		<div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div><div class="gap-patch">
+					<div class="circle"></div>
+				</div><div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="header"></div>
-	<ul id="slide-out" class="sidenav sidenav-fixed">
-		<li>
-			JOE
-		</li>
-		<li><a onclick="menu('home')" href="javascript:void(0)"><i class="material-icons">home</i>Home</a></li>
-		<li><a onclick="menu('module')" href="javascript:void(0)"><i class="material-icons">dns</i>Módulo</a></li>
-		<li><a onclick="menu('flow')" href="javascript:void(0)"><i class="material-icons">account_tree</i>Fluxograma</a></li>
-	</ul>
+	<div id="menu"></div>
+	<section style="margin-left: 207px;">
+		<nav>
+			<div class="nav-wrapper deep-purple">
+				<div class="col s12" style="padding-left: 15px;">
+					<a href="home.html" class="breadcrumb">Home</a>
+					<a href="flow.html" class="breadcrumb">Fluxograma</a>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12">
+				<div class="card" style="padding: 10px; width: 100%!important; height: 100%!important;">
+					<div class="card-content">
+						<div id="chart_container">
+							<div id="example_9"></div>
+						</div>
+						<div class="draggable_operators">
+							<div class="draggable_operators_label">
+								Operators (drag and drop them in the flowchart):
+							</div>
+							<div class="draggable_operators_divs">
+								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
+								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
+								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
+								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
+								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
+								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
+							</div>
+						</div>
+						<button class="btn">Delete selected operator / link</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	<section style="margin-left: 300px;padding: 20px;">
-		<div id="chart_container">
-			<div id="example_9"></div>
-		</div>
-		<div class="draggable_operators">
-			<div class="draggable_operators_label">
-				Operators (drag and drop them in the flowchart):
-			</div>
-			<div class="draggable_operators_divs">
-				<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
-				<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
-				<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
-				<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
-				<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
-				<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
-			</div>
-		</div>
-		<button class="delete_selected_button">Delete selected operator / link</button>
 	</section>
-
-	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 	<div id="footer"></div>
 </body>
 <!-- 
@@ -57,16 +77,16 @@
 <script type="text/javascript" src="js/lib/jquery.flowchart/jquery.flowchart.min.js"></script>
 -->
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery-ui.min.js"></script>
-<script type="text/javascript" src="http://sebastien.drouyer.com/jquery.flowchart-demo/jquery.panzoom/dist/jquery.panzoom.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.panzoom.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery.flowchart/jquery.flowchart.min.js"></script>
-<script type="text/javascript" src="http://sebastien.drouyer.com/jquery.flowchart-demo/javascripts/main.js"></script>
+<script type="text/javascript" src="js/lib/materialize/materialize.min.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/jsBasic.js"></script>
-<script type="text/javascript" src="js/jsTeach.js"></script>
+<script type="text/javascript" src="js/jsHome.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -221,7 +241,7 @@
     }
   });
     
-    
+    $('#loading').addClass('hide');
   });
 </script>
 

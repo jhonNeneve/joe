@@ -3,24 +3,32 @@
 body {
 	padding: 0;
 	margin: 0;
-	background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
-	background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+	background: -moz-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(228, 214, 255) 50%, #d1c4e9 75%, #ede7f6 100%);
+	background: -webkit-linear-gradient(-45deg, #ede7f6 0, #d1c4e9 25%, rgb(228, 214, 255) 50%, #d1c4e9 75%, #ede7f6 100%);
 	background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: #ede7f6;
 }
 
+.card {
+	width: 65%;
+	height: 10%;
+	margin-left: 20%;
+	padding-top: 1px;
+    padding-bottom: 20px;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: rgba(25,147,147,0.1);
+    background-color:#b39ddb;
 }
 
 ::-webkit-scrollbar-thumb {
      border-radius: 10px;
-    background-color: rgba(25,147,147,0.2);
+    background-color: #673ab7;
 }
 
 .chat-thread {
@@ -39,7 +47,7 @@ body {
 	margin: 0 0 20px 0;
 	font: 16px/20px 'Noto Sans', sans-serif;
 	border-radius: 10px;
-	background-color: rgba(25,147,147,0.2);
+	background-color:#f9f9f98a;
 }
 
 /* Chat - Avatar */
@@ -59,7 +67,7 @@ body {
 	content: '';
 	width: 0;
 	height: 0;
-	border-top: 15px solid rgba(25,147,147,0.2);
+	border-top: 15px solid #f9f9f98a;
 }
 
 .chat-thread li:nth-child(odd) {
@@ -68,13 +76,13 @@ body {
 	-webkit-animation: show-chat-odd 0.15s 1 ease-in;
 	float: right;
 	margin-right: 80px;
-	color: #0AD5C1;
+	color: #4527a0;
 }
 
 .chat-thread li:nth-child(odd):before {
 	right: -80px;
   /* // Placeholder avatar 1 */
-	background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QBoRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAExAAIAAAASAAAATgAAAAAAAABgAAAAAQAAAGAAAAABUGFpbnQuTkVUIHYzLjUuMTAA/9sAQwAHBQUGBQQHBgUGCAcHCAoRCwoJCQoVDxAMERgVGhkYFRgXGx4nIRsdJR0XGCIuIiUoKSssKxogLzMvKjInKisq/9sAQwEHCAgKCQoUCwsUKhwYHCoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq/8AAEQgAMgAyAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A8wre0/w55qLLqM62ysMrEWAdh+PSl8M6fFLMbu5K7YziNT3b1/CqniRLq98UA2SlhHGobnA55FdbajHmZwxTnLlRtm78NabDGhs/tEwchmVfMGD0znvn0pqahoN3fCH+z0RcHcWiKY4745/KuUVtTtdSFtJCvmxHmN+317Gp5dTthGZXUSXPJJVsh1PUH1rP2rZt7GKOi1LwxHIv2jRg20jPks4b64b+h/OuZZWRyrqVZTggjBBrZ0PWftFwkA8xImTpu7gVJr1kpX7UhzJ0cZ5I9a0umtDJxcWYVFFFBJ1WlKkOmQASYyoYjZnk81aukuLHTP7YFtDeW6zJEFmyu4555H8PQemaz9NmR9PhO45C7T+HFa1rrk9iwSZ3vLJU+WyaVUCsDncMjJI64H41riYRVHmS7E4KbliOWT7nPePtPvbm8j1trWSyF3GpkgkYEbl4BBHTjHBrn49GkfRLnUpn2tBgtFj76k4GD/e749K63xb4gtdTtp4LeRismGVyOmDnpWBq2pXd74ZsdPjG2GCTdHDEnzSN/ebHLH+VeXBuyR7E4wu35EXhKKObVCRnMKMwY+hwAPz5rrJ7bzYXTfu3Ag5yKwfC+nNZvcPPJHvdQDGnJjOehPTPsOlb0zLFA8m/hVJ/SvXo0oundnhV6slU5UcjRRRXPY3Luk3giYwSHCscqfetfULXOlR3TXIhZ2ZYfLILHHDkjsO3PJPSuXqeC5aPzd5ZjIQdxOcEDFa+0fJyEKmvac5myyQWJlRZnkkTHytjoeuPepLaa9vi4ib7LbOMyFG5KjtnrVMabPd30gcrCjMSZGPQf1NbF0i29pHBAUlbABVT8pPqSOwrljDW53c+lrl/RWxvymyDAWPjsPSpdVnVF8iNsk8tz0HpVFLloowEYvJjBkIwB7AdhUGSxJJyT1JrpU2o8py1IwlJS6hRS0VAiKiiikUKKUUUUxC0ooooAKKKKQH/2Q==);
+	background-image: url('images/chatbot.jpg');
 }
 
 .chat-thread li:nth-child(odd):after {
@@ -88,7 +96,7 @@ body {
 	-webkit-animation: show-chat-even 0.15s 1 ease-in;
 	float: left;
 	margin-left: 80px;
-	color: #0EC879;
+	/* color: #0EC879; */
 }
 
 .chat-thread li:nth-child(even):before {
@@ -101,14 +109,11 @@ body {
 	border-left: 15px solid transparent;
 	left: -15px;
 }
-.container{
-	width: 100% !important;
-	height: 100% !important;
-}
+
 
 .chat-window {
-	position: absolute;
-	bottom: 38px;
+	position: relative;
+
 }
 
 .chat-window-message {
@@ -116,7 +121,7 @@ body {
 	height: 48px;
 	font: 32px/48px 'Noto Sans', sans-serif;
 	background: none;
-	color: #0AD5C1;
+	color: #4527a0;
 	border: 0;
 	border-bottom: 1px solid rgba(25,147,147,0.2);
 	outline: none;
@@ -141,18 +146,17 @@ body {
 /* Medium and large screens */
 @media all and (min-width: 768px) {
 	.chat-thread {
-		width: 50%;
+		width: 85%;
 		height: 400px;
 	}
 
 	.chat-window {
-		left: 25%;
-		width: 50%;
+		left: 10%;
+		width: 82%;
 	}
 }
 
-/* // Animation
-// -------------------------------------- */
+/* // Animation // -------------------------------------- */
 @keyframes show-chat-even {
   0% {
     margin-left: -480px;

@@ -1,25 +1,23 @@
 body {
-    display: flex !important;
-    min-height: 100vh !important;
-    flex-direction: column !important;
-  }
+  display: flex !important;
+  min-height: 100vh !important;
+  flex-direction: column !important;
+}
 
-  main {
-    flex: 1 0 auto !important;
-    padding-left: 300px !important;
+main {
+  flex: 1 0 auto !important;
+}
 
-  }
+.colorText{
+  color:#651fff !important;
+}
 
-  .colorText{
-    color:#651fff !important;
-  }
-
-  nav.top-nav {
-    height: 64px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-bottom: 1px solid rgba(0,0,0,0.14);
-    background-color: transparent;
+nav.top-nav {
+  height: 64px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0,0,0,0.14);
+  background-color: transparent;
 
 }
 
@@ -30,14 +28,37 @@ ul.sidenav.sidenav-fixed {
   border-right: 1px solid rgba(0,0,0,0.14);
   width: 207px;
    /* position: sticky;
-  top: 0px; */
-  margin-top: 64px;
-}
+   top: 0px; */
+   margin-top: 64px;
+ }
 
 /* .sidenav {
   top: 55px;
   display: inline;
-} */
+  } */
 
+  #loading{
+    width: 100vw;
+    height: 100vh;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    line-height: 100vh;
+    text-align: center;
+  }
 
+  /* header, main, footer {
+    padding-left: 207px !important;
+  } */
 
+.sectionCSS{
+  margin-left: 220px;
+}
+
+#footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}

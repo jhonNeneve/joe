@@ -1,34 +1,31 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
-  });
-// var menu = document.getElementById("menu");
-// menu.innerHTML += '<ul id="slide-out" class="sidenav sidenav-fixed">'+
-//                         '<li>'+
-//                             '<div class="user-view">'+
-//                                 '<div class="background">'+
-//                                     '<img src="images/office.jpg">'+
-//                                 '</div>'+
-//                             '</div>'+
-//                         '</li>'+
-//                         '<li><a onclick="menu("home")"><i class="material-icons">home</i>Home</a></li>'+
-//                         '<li><a onclick="menu("module")">Módulo</a></li>'+
-//                         '<li><a onclick="menu("flow")">Fluxograma</a></li>'+
-//                     '</ul>'+
-//                     '<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>';
+});
+
+var menu = document.getElementById("menu");
+if(menu != null){
+    menu.innerHTML += '<ul id="slide-out" class="sidenav sidenav-fixed deep-purple lighten-5">'+
+                          '<li><a onclick="menu(\'home\')" href="javascript:void(0)"><i class="material-icons">home</i>Home</a></li>'+
+                          '<li><a onclick="menu(\'module\')" href="javascript:void(0)"><i class="material-icons">dns</i>Módulo</a></li>'+
+                          '<li><a onclick="menu(\'flow\')" href="javascript:void(0)"><i class="material-icons">account_tree</i>Fluxograma</a></li>'+
+                      '</ul>';
+}
 
 var header = document.getElementById("header");
-header.innerHTML += '<nav class="top-nav">'+
-                        '<div class="nav-wrapper white">'+
-                            '<a href="#" class="brand-logo center colorText ">Joe</a>'+
-                            '<ul class="right hide-on-med-and-down">'+
-                            '<li><a href="sass.html" class="colorText">Sair</a></li>'+
-                            '</ul>'+
-                        '</div>'+
-                    '</nav>';
+header.innerHTML += '<div class="navbar-fixed">' +
+                      '<nav>' +
+                        '<div class="nav-wrapper deep-purple">' +
+                          '<a href="#" class="brand-logo center white-text ">Joe</a>' +
+                          '<ul class="right hide-on-med-and-down">' +
+                            '<li><a href="login.html" class="white-text">Sair</a></li>' +
+                          '</ul>' +
+                        '</div>' +
+                      '</nav>' +
+                    '</div>';
 
 var footer = document.getElementById("footer");
-footer.innerHTML += '<footer class="page-footer white">'+
+footer.innerHTML += '<footer class="page-footer deep-purple" style="padding: 0;padding-left: 207px !important;">'+
                         '<div class="footer-copyright">'+
-                            '<div class="container colorText">© 2015 Copyright</div>'+
+                            '<div class="container white-text">© 2019 Copyright</div>'+
                         '</div>'+
                     '</footer>';
