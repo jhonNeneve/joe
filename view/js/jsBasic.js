@@ -29,3 +29,16 @@ footer.innerHTML += '<footer class="page-footer deep-purple" style="padding: 0;p
                             '<div class="container white-text">© 2019 Copyright</div>'+
                         '</div>'+
                     '</footer>';
+
+// var loading = document.getElementById("loading");
+// loading.innerHTML += '<div class="preloader-wrapper big active">' +
+//                         '<div class="spinner-layer spinner-blue-only">' +
+//                           '<div class="circle-clipper left">' +
+//                             '<div class="circle"></div>' +
+//                           '</div><div class="gap-patch">' +
+//                             '<div class="circle"></div>' +
+//                           '</div><div class="circle-clipper right">' +
+//                             '<div class="circle"></div>' +
+//                           '</div>' +
+//                         '</div>' +
+//                       '</div>';

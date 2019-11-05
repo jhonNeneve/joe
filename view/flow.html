@@ -15,7 +15,7 @@
 	<title>Chat Joe</title>
 </head>
 
-<body style="position: relative; padding-bottom: 50px;">
+<body class="p-b-50 p-relative">
 	<div id="loading">
 		<div class="preloader-wrapper big active">
 			<div class="spinner-layer spinner-blue-only">
@@ -31,43 +31,96 @@
 	</div>
 	<div id="header"></div>
 	<div id="menu"></div>
-	<section style="margin-left: 207px;">
+	<section class="grey lighten-4" style="margin-left: 207px;">
 		<nav>
-			<div class="nav-wrapper deep-purple">
-				<div class="col s12" style="padding-left: 15px;">
+			<div class="nav-wrapper deep-purple lighten-1">
+				<div class="col s12 p-l-15">
 					<a href="home.html" class="breadcrumb">Home</a>
 					<a href="flow.html" class="breadcrumb">Fluxograma</a>
 				</div>
 			</div>
 		</nav>
-		<div class="row">
+		<div class="row m-b-0">
 			<div class="col s12">
-				<div class="card" style="padding: 10px; width: 100%!important; height: 100%!important;">
-					<div class="card-content">
-						<div id="chart_container">
-							<div id="example_9"></div>
-						</div>
-						<div class="draggable_operators">
-							<div class="draggable_operators_label">
-								Operators (drag and drop them in the flowchart):
-							</div>
-							<div class="draggable_operators_divs">
-								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
-								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
-								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
-								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
-								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
-								<div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
-							</div>
-						</div>
-						<button class="btn">Delete selected operator / link</button>
-					</div>
-				</div>
-			</div>
-		</div>
+				<div class="card m-t-15">
+          <div class="row m-0">
+            <div class="col s8 p-0">
+             <div id="chart_container">
+              <div id="example_9"></div>
+            </div>
+          </div>
+          <div class="col s4 deep-purple lighten-5 p-0" style="max-height: 100%; overflow-y: auto; border-left: 1px solid #ddd;">
+            <ul class="collapsible z-depth-0 m-0" style="border: 0;">
+              <li>
+                <div class="collapsible-header"><i class="material-icons">chrome_reader_mode</i>Informações gerais</div>
+                <div class="collapsible-body p-10">
+                  <div class="row m-0">
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <input id="" type="text">
+                      <label for="last_name">Título</label>
+                    </div>
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <input id="" type="text">
+                      <label for="last_name">Descrição</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">zoom_out_map</i>Dimenções do floxo</div>
+                <div class="collapsible-body">
+                  <div class="row">     
+                    <div class="input-field col s12">
+                      <input id="" type="text">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input id="" type="text">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input id="" type="text">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input id="" type="text">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">question_answer</i></div>
+                <div class="collapsible-body">
+                  <div class="row">     
+                    <div class="input-field col s12">
+                      <div class="draggable_operators">
+                        <div class="draggable_operators_label">
+                         Operators (drag and drop them in the flowchart):
+                       </div>
+                       <div class="draggable_operators_divs">
+                         <div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
+                         <div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
+                         <div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
+                         <div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
+                         <div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
+                         <div class="draggable_operator ui-draggable ui-draggable-handle" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
+                       </div>
+                     </div>
+                     <button class="btn">Delete selected operator / link</button>
+                   </div>
+                 </div>
+               </div>
+             </li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 
-	</section>
-	<div id="footer"></div>
+</section>
+<div id="footer"></div>
 </body>
 <!-- 
 <script src="js/lib/jquery/jquery-3.4.1.min.js"></script>
@@ -90,11 +143,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		var $flowchart = $('#example_9');
-		var $container = $flowchart.parent();
+    $('.collapsible').collapsible();
+    var $flowchart = $('#example_9');
+    var $container = $flowchart.parent();
 
-		var cx = $flowchart.width() / 2;
-		var cy = $flowchart.height() / 2;
+    var cx = $flowchart.width() / 2;
+    var cy = $flowchart.height() / 2;
 
 
     // Panzoom initialization...
