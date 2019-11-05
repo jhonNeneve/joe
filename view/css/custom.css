@@ -2,6 +2,10 @@
   position: relative !important;
 }
 
+.d-block{
+  display: block !important;
+}
+
 .w-100{
   width: 100% !important; 
 }
@@ -36,6 +40,10 @@
 
 .p-10{
   padding: 10px !important;
+}
+
+.p-t-10{
+  padding-top: 10px !important;
 }
 
 .p-b-50{
@@ -97,12 +105,6 @@ h4 {
   margin-bottom: 20px;
   border: 4px solid;
   padding: 10px;
-}
-
-#example_9 {
-  width: 2000px;
-  height: 2000px;
-  background: white;
 }
 
 #chart_container {

@@ -43,57 +43,95 @@
 		<div class="row m-b-0">
 			<div class="col s12">
 				<div class="card m-t-15">
-          <div class="row m-0">
+          <div class="row m-0" style="height: 500px;">
             <div class="col s8 p-0">
              <div id="chart_container">
-              <div id="example_9"></div>
+              <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
             </div>
           </div>
-          <div class="col s4 deep-purple lighten-5 p-0" style="max-height: 100%; overflow-y: auto; border-left: 1px solid #ddd;">
+          <div class="col s4 p-0" style="height: 100%; overflow-y: auto; border-left: 1px solid #ddd;">
             <ul class="collapsible z-depth-0 m-0" style="border: 0;">
               <li>
                 <div class="collapsible-header"><i class="material-icons">chrome_reader_mode</i>Informações gerais</div>
                 <div class="collapsible-body p-10">
                   <div class="row m-0">
                     <div class="input-field col s12 m-0 m-t-10">
-                      <input id="" type="text">
-                      <label for="last_name">Título</label>
+                      <input id="inTitulo" type="text">
+                      <label for="inTitulo">Título</label>
                     </div>
                     <div class="input-field col s12 m-0 m-t-10">
-                      <input id="" type="text">
-                      <label for="last_name">Descrição</label>
+                      <input id="inDescricao" type="text">
+                      <label for="inDescricao">Descrição</label>
                     </div>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="collapsible-header"><i class="material-icons">zoom_out_map</i>Dimenções do floxo</div>
-                <div class="collapsible-body">
-                  <div class="row">     
-                    <div class="input-field col s12">
-                      <input id="" type="text">
-                      <label for="last_name">Last Name</label>
+                <div class="collapsible-body p-10">
+                  <div class="row m-0">     
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <input id="inLargura" type="number" minlength="500" value="2000">
+                      <label for="inLargura">Largura</label>
                     </div>
-                    <div class="input-field col s12">
-                      <input id="" type="text">
-                      <label for="last_name">Last Name</label>
-                    </div>
-                    <div class="input-field col s12">
-                      <input id="" type="text">
-                      <label for="last_name">Last Name</label>
-                    </div>
-                    <div class="input-field col s12">
-                      <input id="" type="text">
-                      <label for="last_name">Last Name</label>
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <input id="inAltura" type="number" minlength="500" value="2000">
+                      <label for="inAltura">Altura</label>
                     </div>
                   </div>
                 </div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">question_answer</i></div>
-                <div class="collapsible-body">
-                  <div class="row">     
-                    <div class="input-field col s12">
+                <div class="collapsible-header"><i class="material-icons">question_answer</i>Novo operador</div>
+                <div class="collapsible-body p-10">
+                  <div class="row m-0">
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <select id="seTipo">
+                        <option value="1">Pergunta</option>
+                        <option value="2">Afirmação</option>
+                      </select>
+                      <label>Tipo</label>
+                    </div>
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <input id="" type="text">
+                      <label for="last_name">Titulo</label>
+                    </div>
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <a class="waves-effect waves-teal btn-flat right tooltipped" data-position="top" data-tooltip="Novo campo">
+                        <i class="material-icons">add</i>
+                      </a>
+                      <h6 class="deep-purple-text">Entrada</h6>
+                      <hr style="border-color: #673ab7;">
+                    </div>
+                    <div class="input-field col s12 m-0 m-t-10">
+                      <input id="input_0" type="text">
+                      <label for="input_0">Entrada 1</label>
+                    </div>
+                    <div id="divInput" class="scale-transition">
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <a class="waves-effect waves-teal btn-flat right tooltipped" data-position="top" data-tooltip="Novo campo">
+                          <i class="material-icons">add</i>
+                        </a>
+                        <h6 class="deep-purple-text">Saida</h6>
+                        <hr style="border-color: #673ab7;">
+                      </div>
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <input id="output_0" type="text">
+                      <label for="input_0">Saida 1</label>
+                      </div>
+                    </div>
+                    <div class="input-field col s6 m-0 m-t-10">
+                      <div class="draggable_operator ui-draggable ui-draggable-handle" 
+                           data-nb-inputs="0" 
+                           data-nb-outputs="0" 
+                           style="height: 36px; line-height: 29px; text-align: center;width: 100%;">
+                        Operador
+                      </div>
+                    </div>
+                    <div class="input-field col s6 m-0 m-t-10">
+                      <a class="waves-effect waves-light btn d-block">Gerar</a>
+                    </div>
+                    <!-- <div class="col s12">
                       <div class="draggable_operators">
                         <div class="draggable_operators_label">
                          Operators (drag and drop them in the flowchart):
@@ -108,7 +146,7 @@
                        </div>
                      </div>
                      <button class="btn">Delete selected operator / link</button>
-                   </div>
+                   </div> -->
                  </div>
                </div>
              </li>
@@ -143,7 +181,33 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-    $('.collapsible').collapsible();
+    M.AutoInit();
+
+
+    $('#seTipo').change(function(){
+      if ($(this).val() == 1) {
+        $('#divInput').removeClass('scale-out');
+        $('#divInput').addClass('scale-in');
+      } else {
+        $('#divInput').removeClass('scale-in');
+        $('#divInput').addClass('scale-out');
+      }
+    });
+
+    $('#inLargura').change(function(){
+      let largura = parseInt($(this).val());
+      if (largura > 499) {
+        $('#example_9').css('width', largura);
+      }
+    });
+
+    $('#inAltura').change(function(){
+      let altura = parseInt($(this).val());
+      if (altura > 499) {
+        $('#example_9').css('height', altura);
+      }
+    });
+
     var $flowchart = $('#example_9');
     var $container = $flowchart.parent();
 
