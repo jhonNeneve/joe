@@ -11,41 +11,25 @@
 </head>
 
 <body>
+	<div id="loading">
+		<div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div><div class="gap-patch">
+					<div class="circle"></div>
+				</div><div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="header"></div>
 	<div id="menu"></div>
 	<!-- trocar para porcentagem -->
 	<section class="sectionCSS" >
 		<div class="row">
-			<div class="col s12 m3">
-				<div class="card">
-					<div class="card-image waves-effect waves-block waves-light">
-						<img class="activator" src="images/0.jpg">
-					</div>
-					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-						<p><a href="#">This is a link</a></p>
-					</div>
-					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-						<p>Here is some more information about this product that is only revealed once clicked on.</p>
-					</div>
-				</div>
-         </div>  
-         <div class="col s12 m4">
-            <div class="card horizontal">
-               <div class="card-image">
-                  <img src="images/0.jpg">
-               </div>
-               <div class="card-stacked">
-                  <div class="card-content">
-                     <p>I am a very simple card. I am good at containing small bits of information.</p>
-                  </div>
-                  <div class="card-action">
-                     <a href="#">This is a link</a>
-                  </div>
-               </div>
-               </div>
-            </div>          
+		 <div id="cardFlow"></div>          
          </div>
 	</section>
 	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -56,5 +40,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 <script type="text/javascript" src="js/jsBasic.js"></script>
 <script type="text/javascript" src="js/jsHome.js"></script>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#loading').addClass('hide');
+	});
+</script>
 </html>

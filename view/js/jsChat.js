@@ -7,6 +7,8 @@
 // The below JS has been adapted from this excellent RTCDataChannel demo
 // http://simpl.info/rtcdatachannel/
 
+
+
 var sendChannel, 
 	receiveChannel,
 	chatWindow = document.querySelector('.chat-window'),
@@ -17,13 +19,13 @@ var sendChannel,
 createConnection();
 
 // On form submit, send message
-chatWindow.onsubmit = function (e) {
-	e.preventDefault();
+// chatWindow.onsubmit = function (e) {
+// 	e.preventDefault();
 
-	sendData();
+// 	sendData();
 
-	return false;
-};
+// 	return false;
+// };
 
 function createConnection () {
     var servers = null;
