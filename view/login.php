@@ -21,15 +21,15 @@
 
         <div class="tabs-content carousel carousel-slider">
     <!-- ===================LOGIN ============ -->
-          <form action="">
+          <form method="get" action="login.php">
             <div id="login" class=" carousel-item active" 
             style="z-index: 0; opacity: 1; visibility: visible;">
               <div class="form-group">
-                <input type="text" id="email" placeholder="E-mail" required>
+                <input type="text" name="email" id="email" placeholder="E-mail" required>
                 <label for="email">E-mail</label>    
               </div>
               <div class="form-group">
-                <input type="password" id="password" placeholder="Senha" required>
+                <input type="password" name="password" id="password" placeholder="Senha" required>
                 <label for="password">Senha</label>    
               </div>
               <div class="button-area">
