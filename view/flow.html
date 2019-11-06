@@ -183,7 +183,6 @@
 	$(document).ready(function() {
     M.AutoInit();
 
-
     $('#seTipo').change(function(){
       if ($(this).val() == 1) {
         $('#divInput').removeClass('scale-out');
@@ -194,17 +193,35 @@
       }
     });
 
-    $('#inLargura').change(function(){
+    $('#inLargura').keyup(function(){
       let largura = parseInt($(this).val());
       if (largura > 499) {
         $('#example_9').css('width', largura);
+        $flowchart.panzoom('pan', 5, 5);
       }
     });
 
-    $('#inAltura').change(function(){
+    $('#inAltura').keyup(function(){
       let altura = parseInt($(this).val());
       if (altura > 499) {
         $('#example_9').css('height', altura);
+        $flowchart.panzoom('pan', 5, 5);
+      }
+    });
+
+    $('#inLargura').click(function() {
+      let largura = parseInt($(this).val());
+      if (largura > 499) {
+        $('#example_9').css('width', largura);
+        $flowchart.panzoom('pan', 5, 5);
+      }
+    });
+
+    $('#inAltura').click(function() {
+      let altura = parseInt($(this).val());
+      if (altura > 499) {
+        $('#example_9').css('height', altura);
+        $flowchart.panzoom('pan', 5, 5);
       }
     });
 
@@ -219,19 +236,19 @@
     $flowchart.panzoom();
     
     // Centering panzoom
-    $flowchart.panzoom('pan', -cx + $container.width() / 2, -cy + $container.height() / 2);
+    $flowchart.panzoom('pan', 5, 5);
 
     // Panzoom zoom handling...
-    var possibleZooms = [0.5, 0.75, 1, 2, 3];
+    var possibleZooms = [0, 0.5, 0.75, 1, 1.5, 1.75, 2];
     var currentZoom = 2;
-    $container.on('mousewheel.focal', function( e ) {
+    $container.on('mousewheel.focal', function(e) {
     	e.preventDefault();
     	var delta = (e.delta || e.originalEvent.wheelDelta) || e.originalEvent.detail;
     	var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
     	currentZoom = Math.max(0, Math.min(possibleZooms.length - 1, (currentZoom + (zoomOut * 2 - 1))));
     	$flowchart.flowchart('setPositionRatio', possibleZooms[currentZoom]);
     	$flowchart.panzoom('zoom', possibleZooms[currentZoom], {
-    		animate: false,
+    		animate: true,
     		focal: e
     	});
     });
@@ -239,8 +256,8 @@
     var data = {
     	operators: {
     		operator1: {
-    			top: cy - 100,
-    			left: cx - 200,
+    			top: 10,
+    			left: 10,
     			properties: {
     				title: 'Operator 1',
     				inputs: {},
@@ -252,8 +269,8 @@
     			}
     		},
     		operator2: {
-    			top: cy,
-    			left: cx + 140,
+    			top: 10,
+    			left: 310,
     			properties: {
     				title: 'Operator 2',
     				inputs: {
