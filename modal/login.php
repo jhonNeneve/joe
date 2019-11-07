@@ -1,10 +1,8 @@
 <?php
     include("connect.php");
-
-    $email = $_GET["email"];
-    $password = $_GET["password"];
-    $name = 'Amanda';
-
-mysql_query($connect, "insert into users (name, email, password) values ('$name','$email', '$password')");
-
->
+    function oi(){
+    $oioi = $_POST['oi'];
+    $verifica = mysqli_query($connect,"SELECT * FROM oi where oioi = 123"); 
+    var_dump(mysqli_fetch_array($verifica));
+}
+?>
