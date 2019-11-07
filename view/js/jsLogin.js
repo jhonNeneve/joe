@@ -21,7 +21,7 @@ function teste(oi){
   $.ajax({
     method: "POST",
     url: "/joe/modal/login.php/oi",
-    data: { nome: "tchau"},
+    data: oi,
     success: function(result){
       console.log("nem voltou")
        
