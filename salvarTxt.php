@@ -1,6 +1,7 @@
 <?php
-	$texto = $_POST['texto'];
-	$arquivo = fopen('brain.rive','a');
+	$texto = $_POST['doc'];
+	$title = $_POST['title'];
+	$arquivo = fopen($title.'.rive' ,'a');
 	fwrite($arquivo, $texto);
 	fclose($arquivo);
 	echo $texto;

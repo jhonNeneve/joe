@@ -6,7 +6,8 @@ const input_box = document.querySelector('input');
 
 
 const brains = [
-  './brain.rive'
+  './brain.rive',
+  './brain1.rive'
 ];
 
 // const brains = [

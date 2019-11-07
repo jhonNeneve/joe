@@ -13,8 +13,11 @@
 		$(document).ready(function () {
 
 			let doc = "";
+			let title;
+
 			let arrayTeste = [
 				{
+					"title": "nomedofluxo",
 					"question": "Como abrir uma conta",
 					"answers": [
 						{
@@ -28,6 +31,7 @@
 					]
 				},
 				{
+					"title": "nome do fluxo",
 					"question": "Como (encontrar|chegar) em uma agencia",
 					"answers": [
 						{
@@ -44,45 +48,36 @@
 
 			doc += "! version = 2.0\n\n"
 			doc += "+ *\n";
-			doc+="- Nao entendi\n";
-			doc+="- foi mal nao entendi\n";
-			doc+="- deu ruim!\n\n";
+			doc += "- Nao entendi\n";
+			doc += "- foi mal nao entendi\n";
+			doc += "- deu ruim!\n\n";
 
-			for (let i in arrayTeste) {
-				console.log(arrayTeste[i].question);
-				doc += ('+ ' + arrayTeste[i].question.toLowerCase());
-				for (let index in (arrayTeste[i].answers)) {
-					doc += ("\n- " + arrayTeste[i].answers[index].question) ;
-					console.log('length: ', arrayTeste[i].answers.length, " index: ", index);
-					arrayTeste[i].answers.length -1 == index ? doc+="\n\n" : '';
+			try {
+				for (let i in arrayTeste) {
+					console.log("i: ", i, "title: ", arrayTeste[i])
+					i == 0 ? title = arrayTeste[i].title : '';
+					console.log(arrayTeste[i].question);
+					doc += ('+ ' + arrayTeste[i].question.toLowerCase());
+					for (let index in (arrayTeste[i].answers)) {
+						doc += ("\n- " + arrayTeste[i].answers[index].question);
+						arrayTeste[i].answers.length - 1 == index ? doc += "\n\n" : '';
+					}
 				}
+			} catch (error) {
+				alert("Erro ao gerar o arquivo!");
 			}
-			console.log(doc);
+			console.log("finished: ", doc);
 
 			$.ajax({
 				url: 'salvarTxt.php',
 				type: 'post',
 				data: {
-					// 'texto': $('#text').val()
-					'texto': doc.toString()
+					'doc': doc.toString(),
+					'title': title.toString()
 				},
 				success: function (resp) {
 					console.log(resp);
 				}
-			});
-
-			$('#send').click(function () {
-				$.ajax({
-					url: 'salvarTxt.php',
-					type: 'post',
-					data: {
-						// 'texto': $('#text').val()
-						'texto': doc.toString()
-					},
-					success: function (resp) {
-						console.log(resp);
-					}
-				});
 			});
 		})
 	</script>
