@@ -44,97 +44,100 @@
 			<div class="col s12">
 				<div class="card m-t-15">
           <div class="row m-0" style="height: 500px;">
-            <div class="col s8 p-0">
-             <div id="chart_container">
-              <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
+            <div class="col s8 p-0" style="position: relative;">
+              <a id="deletarOperador" class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Deletar operador" style="position: absolute; right: 10px; top: 10px;">
+                <i class="material-icons">delete_outline</i>
+              </a>
+              <div id="chart_container">
+                <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
+              </div>
             </div>
-          </div>
-          <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
-            <div class="row m-0" style="height: calc(100% - 56px);border-bottom: 1px solid #ddd;">
-              <div class="col s12 p-0" style="height: 100%;">
-                <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
-                  <li style="max-height: calc(100% - 110px);">
-                    <div class="collapsible-header"><i class="material-icons">chrome_reader_mode</i>Informações gerais</div>
-                    <div class="collapsible-body p-10" style="max-height: 279px;">
-                      <div class="row m-0">
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inTitulo" type="text">
-                          <label for="inTitulo">Título</label>
-                        </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inDescricao" type="text">
-                          <label for="inDescricao">Descrição</label>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li style="max-height: calc(100% - 110px);">
-                    <div class="collapsible-header"><i class="material-icons">zoom_out_map</i>Dimenções do floxo</div>
-                    <div class="collapsible-body p-10" style="max-height: 279px;">
-                      <div class="row m-0">     
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inLargura" type="number" minlength="500" value="2000">
-                          <label for="inLargura">Largura</label>
-                        </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inAltura" type="number" minlength="500" value="2000">
-                          <label for="inAltura">Altura</label>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li style="max-height: calc(100% - 110px);">
-                    <div class="collapsible-header"><i class="material-icons">question_answer</i>Novo operador</div>
-                    <div class="collapsible-body p-10" style="max-height: 279px;">
-                      <div class="row m-0">
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <select id="seTipo">
-                            <option value="1">Pergunta</option>
-                            <option value="2">Afirmação</option>
-                          </select>
-                          <label>Tipo</label>
-                        </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="" type="text">
-                          <label for="last_name">Titulo</label>
-                        </div>
-                        <div id="divInput" class="scale-transition">
+            <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
+              <div class="row m-0" style="height: calc(100% - 52px);border-bottom: 1px solid #ddd;">
+                <div class="col s12 p-0" style="height: 100%;">
+                  <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
+                    <li style="max-height: calc(100% - 110px);">
+                      <div class="collapsible-header p-10"><i class="material-icons">chrome_reader_mode</i>Informações gerais</div>
+                      <div class="collapsible-body p-10" style="max-height: 313px;">
+                        <div class="row m-0">
                           <div class="input-field col s12 m-0 m-t-10">
-                            <a class="waves-effect waves-teal btn-flat right" id="newInSaida">
-                              <i class="material-icons">add</i>
-                            </a>
-                            <h6 class="deep-purple-text">Saida</h6>
-                            <hr style="border-color: #673ab7;">
+                            <input id="inTitulo" type="text">
+                            <label for="inTitulo">Título</label>
                           </div>
-                          <div id="inSaida"></div>
-                        </div>
-                        <div class="input-field col s6 m-0 m-t-10">
-                          <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle" 
-                          data-nb-inputs="1" 
-                          data-nb-outputs="0" 
-                          style="height: 36px; line-height: 29px; text-align: center;width: 100%;">
-                          Operador
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inDescricao" type="text">
+                            <label for="inDescricao">Descrição</label>
+                          </div>
                         </div>
                       </div>
-                      <div class="input-field col s6 m-0 m-t-10">
-                        <a class="waves-effect waves-light btn d-block" id="newOperator">Gerar</a>
+                    </li>
+                    <li style="max-height: calc(100% - 110px);">
+                      <div class="collapsible-header p-10"><i class="material-icons">zoom_out_map</i>Dimenções do floxo</div>
+                      <div class="collapsible-body p-10" style="max-height: 313px;">
+                        <div class="row m-0">     
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inLargura" type="number" minlength="500" value="2000">
+                            <label for="inLargura">Largura</label>
+                          </div>
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inAltura" type="number" minlength="500" value="2000">
+                            <label for="inAltura">Altura</label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="max-height: calc(100% - 110px);">
+                      <div class="collapsible-header p-10"><i class="material-icons">question_answer</i>Novo operador</div>
+                      <div class="collapsible-body p-10" style="max-height: 313px;">
+                        <div class="row m-0">
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <select id="seTipo">
+                              <option value="1">Pergunta</option>
+                              <option value="2">Afirmação</option>
+                            </select>
+                            <label>Tipo</label>
+                          </div>
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="" type="text">
+                            <label for="last_name">Frase</label>
+                          </div>
+                          <div id="divInput" class="scale-transition">
+                            <div class="input-field col s12 m-0 m-t-10">
+                              <a class="waves-effect waves-teal btn-flat right" id="newInSaida">
+                                <i class="material-icons">add</i>
+                              </a>
+                              <h6 class="deep-purple-text">Respostas</h6>
+                              <hr style="border-color: #673ab7;">
+                            </div>
+                            <div id="inSaida"></div>
+                          </div>
+                          <div class="col s6 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
+                            <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle" 
+                            data-nb-inputs="1" 
+                            data-nb-outputs="0" 
+                            style="height: 32.4px; line-height: 23px; text-align: center;width: 100%;">
+                            Operador
+                          </div>
+                        </div>
+                        <div class="col s6 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
+                          <a class="btn btn-small waves-effect waves-light d-block" id="newOperator">Gerar</a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="row m-0">
-            <div class="col s12 p-0">
-              <a class="waves-effect waves-light btn d-block m-10">Salvar</a>
+            <div class="row m-0">
+              <div class="col s12 p-0">
+                <a class="btn btn-small waves-effect waves-light d-block m-10">Salvar</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 </section>
 <div id="footer"></div>
@@ -198,13 +201,13 @@
     $('#newInSaida').click(function() {
       $('#inSaida').append('\
         <div class="input-field col s12 m-0 m-t-10">\
-          <a class="waves-effect waves-teal btn-flat right m-t-10">\
-            <i class="material-icons">delete</i>\
-          </a>\
-          <input id="output_'+calcSaidas+'" type="text" style="width: calc(100% - 55px);">\
-          <label for="output_'+calcSaidas+'">Saida '+calcSaidas+'</label>\
+        <a class="waves-effect waves-teal btn-flat right m-t-10">\
+        <i class="material-icons">delete</i>\
+        </a>\
+        <input id="output_'+calcSaidas+'" type="text" style="width: calc(100% - 55px);">\
+        <label for="output_'+calcSaidas+'">Resposta '+calcSaidas+'</label>\
         </div>\
-      ');
+        ');
       calcSaidas++;
       $('#divOperador').attr('data-nb-outputs', calcSaidas);
     });
@@ -292,7 +295,17 @@
     // Apply the plugin on a standard, empty div...
     $flowchart.flowchart({
       multipleLinksOnInput: true,
-      multipleLinksOnOutput: true
+      multipleLinksOnOutput: true,
+      onOperatorSelect: function(operatorId) {
+        $('#deletarOperador').removeClass('scale-out');
+        $('#deletarOperador').addClass('scale-in');
+        return true;
+      },
+      onOperatorUnselect: function() {
+        $('#deletarOperador').removeClass('scale-in');
+        $('#deletarOperador').addClass('scale-out');
+        return true;
+      }
     });
 
     $flowchart.parent().siblings('.delete_selected_button').click(function() {
@@ -315,71 +328,72 @@
 
     	var i = 0;
       //Entradas
-    	for (i = 0; i < nbInputs; i++) {
-    		data.properties.inputs['input_' + i] = {
-    			label: 'Entrada'
-    		};
-    	}
+      for (i = 0; i < nbInputs; i++) {
+        data.properties.inputs['input_' + i] = {
+         label: 'Entrada'
+       };
+     }
       //Saidas
-    	for (i = 0; i < nbOutputs; i++) {
-    		data.properties.outputs['output_' + i] = {
-    			label: outputs[i]
-    		};
-    	}
-    	return data;
-    }
-    
-    var operatorId = 0;
+      for (i = 0; i < nbOutputs; i++) {
+        data.properties.outputs['output_' + i] = {
+         label: outputs[i]
+       };
+     }
+     return data;
+   }
 
-    $draggableOperators.draggable({
-    	cursor: "move",
-    	opacity: 0.7,
+   var operatorId = 0;
 
-    	helper: 'clone', 
-    	appendTo: 'body',
-    	zIndex: 1000,
+   $draggableOperators.draggable({
+     cursor: "move",
+     opacity: 0.7,
 
-    	helper: function(e) {
-    		var $this = $(this);
-    		var data = getOperatorData($this);
-    		return $flowchart.flowchart('getOperatorElement', data);
-    	},
-    	stop: function(e, ui) {
-    		var $this = $(this);
-    		var elOffset = ui.offset;
-    		var containerOffset = $container.offset();
-    		if (elOffset.left > containerOffset.left &&
-    			elOffset.top > containerOffset.top && 
-    			elOffset.left < containerOffset.left + $container.width() &&
-    			elOffset.top < containerOffset.top + $container.height()) {
+     helper: 'clone', 
+     appendTo: 'body',
+     zIndex: 1000,
 
-    			var flowchartOffset = $flowchart.offset();
+     helper: function(e) {
+      var $this = $(this);
+      var data = getOperatorData($this);
+      return $flowchart.flowchart('getOperatorElement', data);
+    },
+    stop: function(e, ui) {
+      var $this = $(this);
+      var elOffset = ui.offset;
+      var containerOffset = $container.offset();
+      if (elOffset.left > containerOffset.left &&
+       elOffset.top > containerOffset.top && 
+       elOffset.left < containerOffset.left + $container.width() &&
+       elOffset.top < containerOffset.top + $container.height()) {
 
-    		var relativeLeft = elOffset.left - flowchartOffset.left;
-    		var relativeTop = elOffset.top - flowchartOffset.top;
+       var flowchartOffset = $flowchart.offset();
 
-    		var positionRatio = $flowchart.flowchart('getPositionRatio');
-    		relativeLeft /= positionRatio;
-    		relativeTop /= positionRatio;
+     var relativeLeft = elOffset.left - flowchartOffset.left;
+     var relativeTop = elOffset.top - flowchartOffset.top;
 
-    		var data = getOperatorData($this);
-    		data.left = relativeLeft;
-    		data.top = relativeTop;
+     var positionRatio = $flowchart.flowchart('getPositionRatio');
+     relativeLeft /= positionRatio;
+     relativeTop /= positionRatio;
 
-    		$flowchart.flowchart('addOperator', data);
-    	}
-    }
-  });
-    
-    $('#loading').addClass('hide');
-  });
+     var data = getOperatorData($this);
+     data.left = relativeLeft;
+     data.top = relativeTop;
 
-  function restOperador() {
-    outputs = [];
-    $('#inSaida').html('');
-    calcSaidas = 0;
-    $('#divOperador').attr('data-nb-outputs', 0);
-  }
+     $flowchart.flowchart('addOperator', data);
+   }
+ }
+
+});
+
+   $('#loading').addClass('hide');
+ });
+
+function restOperador() {
+  outputs = [];
+  calcSaidas = 0;
+  $('#inSaida').html('');
+  $('#divOperador').attr('data-nb-outputs', 0);
+}
 </script>
 
 </html>
