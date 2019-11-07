@@ -18,6 +18,10 @@
   margin: 0 !important
 }
 
+.m-10{
+  margin: 10px !important
+}
+
 .m-t-10{
   margin-top: 10px !important;
 }
@@ -148,4 +152,8 @@ h4 {
 
 .delete_selected_button {
   margin-bottom: 20px;
+}
+
+.collapsible-body{
+  overflow-y: auto !important;
 }
