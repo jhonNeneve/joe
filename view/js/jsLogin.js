@@ -18,9 +18,11 @@ openLoginRight.addEventListener('click', function(){
 function teste(oi){
   event.preventDefault();
   console.log('oi');
+  var oi = ['funcao',oi];
+
   $.ajax({
     method: "POST",
-    url: "/joe/modal/login.php/oi",
+    url: "/joe/modal/login.php",
     data: oi,
     success: function(result){
       console.log("nem voltou")

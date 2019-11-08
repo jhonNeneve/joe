@@ -24,12 +24,13 @@ header.innerHTML += '<div class="navbar-fixed">' +
                     '</div>';
 
 var footer = document.getElementById("footer");
+if(footer != null){
 footer.innerHTML += '<footer class="page-footer deep-purple" style="padding: 0;padding-left: 207px !important;">'+
                         '<div class="footer-copyright">'+
                             '<div class="container white-text">© 2019 Copyright</div>'+
                         '</div>'+
                     '</footer>';
-
+}
 // var loading = document.getElementById("loading");
 // loading.innerHTML += '<div class="preloader-wrapper big active">' +
 //                         '<div class="spinner-layer spinner-blue-only">' +
