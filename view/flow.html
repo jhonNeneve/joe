@@ -51,6 +51,12 @@
               <div id="chart_container">
                 <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
               </div>
+              <!-- <div class="range-field" style="position: absolute; bottom: 50px; left: 30px;">
+                <input type="range" id="range-y" min="0" max="4000" />
+              </div>
+              <div class="range-field" style="position: absolute; bottom: 0; left: 30px;">
+                <input type="range" id="range-x" min="0" max="4000" />
+              </div> -->
             </div>
             <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
               <div class="row m-0" style="height: calc(100% - 52px);border-bottom: 1px solid #ddd;">
@@ -58,7 +64,7 @@
                   <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
                     <li style="max-height: calc(100% - 110px);">
                       <div class="collapsible-header p-10"><i class="material-icons">chrome_reader_mode</i>Informações gerais</div>
-                      <div class="collapsible-body p-10" style="max-height: 313px;">
+                      <div class="collapsible-body p-10" style="max-height: 315px;">
                         <div class="row m-0">
                           <div class="input-field col s12 m-0 m-t-10">
                             <input id="inTitulo" type="text">
@@ -73,7 +79,7 @@
                     </li>
                     <li style="max-height: calc(100% - 110px);">
                       <div class="collapsible-header p-10"><i class="material-icons">zoom_out_map</i>Dimenções do floxo</div>
-                      <div class="collapsible-body p-10" style="max-height: 313px;">
+                      <div class="collapsible-body p-10" style="max-height: 315px;">
                         <div class="row m-0">     
                           <div class="input-field col s12 m-0 m-t-10">
                             <input id="inLargura" type="number" minlength="500" value="2000">
@@ -88,7 +94,7 @@
                     </li>
                     <li style="max-height: calc(100% - 110px);">
                       <div class="collapsible-header p-10"><i class="material-icons">question_answer</i>Novo operador</div>
-                      <div class="collapsible-body p-10" style="max-height: 313px;">
+                      <div class="collapsible-body p-10" style="max-height: 315px;">
                         <div class="row m-0">
                           <div class="input-field col s12 m-0 m-t-10">
                             <select id="seTipo">
@@ -98,8 +104,8 @@
                             <label>Tipo</label>
                           </div>
                           <div class="input-field col s12 m-0 m-t-10">
-                            <input id="" type="text">
-                            <label for="last_name">Frase</label>
+                            <input id="inFrase" type="text">
+                            <label for="inFrase">Frase</label>
                           </div>
                           <div id="divInput" class="scale-transition">
                             <div class="input-field col s12 m-0 m-t-10">
@@ -113,8 +119,6 @@
                           </div>
                           <div class="col s6 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
                             <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle" 
-                            data-nb-inputs="1" 
-                            data-nb-outputs="0" 
                             style="height: 32.4px; line-height: 23px; text-align: center;width: 100%;">
                             Operador
                           </div>
@@ -154,7 +158,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
     M.AutoInit();
-    var calcSaidas = 0;
+    calcSaidas = 0;
     var outputs = [];
 
     $('#seTipo').change(function(){
@@ -200,22 +204,21 @@
 
     $('#newInSaida').click(function() {
       $('#inSaida').append('\
-        <div class="input-field col s12 m-0 m-t-10">\
-        <a class="waves-effect waves-teal btn-flat right m-t-10">\
+        <div id="div_output_'+calcSaidas+'" class="input-field col s12 m-0 m-t-10">\
+        <a class="waves-effect waves-teal btn-flat right m-t-10" onclick="deletarOperador('+calcSaidas+')">\
         <i class="material-icons">delete</i>\
         </a>\
         <input id="output_'+calcSaidas+'" type="text" style="width: calc(100% - 55px);">\
-        <label for="output_'+calcSaidas+'">Resposta '+calcSaidas+'</label>\
+        <label id="label_'+calcSaidas+'" for="output_'+calcSaidas+'">Resposta '+calcSaidas+'</label>\
         </div>\
         ');
       calcSaidas++;
-      $('#divOperador').attr('data-nb-outputs', calcSaidas);
     });
 
     $('#newOperator').click(function() {
       outputs = [];
       if($('#inSaida').html() != ''){
-        for (var i = 0; i <= calcSaidas; i++) {
+        for (var i = 0; i < calcSaidas; i++) {
           outputs.push($('#output_'+i).val());
         }
       }
@@ -223,10 +226,6 @@
 
     var $flowchart = $('#example_9');
     var $container = $flowchart.parent();
-
-    var cx = $flowchart.width() / 2;
-    var cy = $flowchart.height() / 2;
-
 
     // Panzoom initialization...
     $flowchart.panzoom();
@@ -291,7 +290,6 @@
     	}
     };
     
-
     // Apply the plugin on a standard, empty div...
     $flowchart.flowchart({
       multipleLinksOnInput: true,
@@ -314,86 +312,90 @@
     
     
     var $draggableOperators = $('.draggable_operator');
-    
+
+    var operatorId = 0;
+
+    $draggableOperators.draggable({
+      cursor: "move",
+      opacity: 0.7,
+      helper: 'clone', 
+      appendTo: 'body',
+      zIndex: 1000,
+      helper: function(e) {
+        var $this = $(this);
+        var data = getOperatorData($this);
+        return $flowchart.flowchart('getOperatorElement', data);
+      },
+      stop: function(e, ui) {
+        var $this = $(this);
+        var elOffset = ui.offset;
+        var containerOffset = $container.offset();
+        if (elOffset.left > containerOffset.left &&
+          elOffset.top > containerOffset.top && 
+          elOffset.left < containerOffset.left + $container.width() &&
+          elOffset.top < containerOffset.top + $container.height()) 
+        {
+          var flowchartOffset = $flowchart.offset();
+          var relativeLeft = elOffset.left - flowchartOffset.left;
+          var relativeTop = elOffset.top - flowchartOffset.top;
+
+          var positionRatio = $flowchart.flowchart('getPositionRatio');
+          relativeLeft /= positionRatio;
+          relativeTop /= positionRatio;
+
+          var data = getOperatorData($this);
+          data.left = relativeLeft;
+          data.top = relativeTop;
+
+          $flowchart.flowchart('addOperator', data);
+        }
+      }
+    });
+
     function getOperatorData($element) {
-    	var nbInputs = parseInt($element.data('nb-inputs'));
-    	var nbOutputs = parseInt($element.data('nb-outputs'));
-    	var data = {
-    		properties: {
-    			title: $element.text(),
-    			inputs: {},
-    			outputs: {}
-    		} 
-    	};
+      var data = {
+        properties: {
+          title: $('#inFrase').val(),
+          inputs: {},
+          outputs: {}
+        } 
+      };
 
-    	var i = 0;
       //Entradas
-      for (i = 0; i < nbInputs; i++) {
-        data.properties.inputs['input_' + i] = {
-         label: 'Entrada'
-       };
-     }
+      data.properties.inputs['input'] = {
+        label: 'Entrada'
+      };
       //Saidas
-      for (i = 0; i < nbOutputs; i++) {
+      for (i = 0; i < calcSaidas; i++) {
         data.properties.outputs['output_' + i] = {
-         label: outputs[i]
-       };
-     }
-     return data;
-   }
+          label: outputs[i]
+        };
+      }
+      return data;
+    }
 
-   var operatorId = 0;
+    function restOperador() {
+      outputs = [];
+      calcSaidas = 0;
+      $('#inSaida').html('');
+      $('#divOperador').attr('data-nb-outputs', 0);
+    }
 
-   $draggableOperators.draggable({
-     cursor: "move",
-     opacity: 0.7,
+    $('#loading').addClass('hide');
+  });
 
-     helper: 'clone', 
-     appendTo: 'body',
-     zIndex: 1000,
-
-     helper: function(e) {
-      var $this = $(this);
-      var data = getOperatorData($this);
-      return $flowchart.flowchart('getOperatorElement', data);
-    },
-    stop: function(e, ui) {
-      var $this = $(this);
-      var elOffset = ui.offset;
-      var containerOffset = $container.offset();
-      if (elOffset.left > containerOffset.left &&
-       elOffset.top > containerOffset.top && 
-       elOffset.left < containerOffset.left + $container.width() &&
-       elOffset.top < containerOffset.top + $container.height()) {
-
-       var flowchartOffset = $flowchart.offset();
-
-     var relativeLeft = elOffset.left - flowchartOffset.left;
-     var relativeTop = elOffset.top - flowchartOffset.top;
-
-     var positionRatio = $flowchart.flowchart('getPositionRatio');
-     relativeLeft /= positionRatio;
-     relativeTop /= positionRatio;
-
-     var data = getOperatorData($this);
-     data.left = relativeLeft;
-     data.top = relativeTop;
-
-     $flowchart.flowchart('addOperator', data);
-   }
- }
-
-});
-
-   $('#loading').addClass('hide');
- });
-
-function restOperador() {
-  outputs = [];
-  calcSaidas = 0;
-  $('#inSaida').html('');
-  $('#divOperador').attr('data-nb-outputs', 0);
-}
+    function deletarOperador(num) {
+      $('#div_output_'+num).remove();
+      for (var i = (num + 1); i < calcSaidas; i++) {
+        $('#label_'+i).html('Resposta '+(i-1));
+        $('#label_'+i).attr('for', 'output_'+(i-1));
+        $('#div_output_'+i+' a').attr('onclick', 'deletarOperador('+(i-1)+');');
+        $('#div_output_'+i).attr('id', 'div_output_'+(i-1));
+        $('#output_'+i).attr('id', 'output_'+(i-1));
+        $('#label_'+i).attr('id', 'label_'+(i-1));
+      }
+      calcSaidas--;
+    }
 </script>
 
 </html>
