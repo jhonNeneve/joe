@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<link rel="stylesheet" type="text/css" href="css/cssBasic.css" ></link>
-		<link rel="stylesheet" type="text/css" href="css/cssHome.css" ></link>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/cssBasic.css" ></link>
+	<link rel="stylesheet" type="text/css" href="css/cssHome.css" ></link>
 
-		<title>Chat Joe</title>
-	</head>
-	<body>
-		<div id="loading">
-			<div class="preloader-wrapper big active">
-				<div class="spinner-layer spinner-blue-only">
-					<div class="circle-clipper left">
-						<div class="circle"></div>
-					</div><div class="gap-patch">
-						<div class="circle"></div>
-					</div><div class="circle-clipper right">
-						<div class="circle"></div>
+	<title>Chat Joe</title>
+</head>
+<body class="p-b-50 p-relative">
+	<div id="loading">
+		<div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div><div class="gap-patch">
+					<div class="circle"></div>
+				</div><div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="header"></div>
+	<div id="menu"></div>
+	<section class="grey lighten-4" style="margin-left: 207px;">
+		<nav>
+			<div class="nav-wrapper deep-purple lighten-1">
+				<div class="col s12 p-l-15">
+					<a href="home.html" class="breadcrumb">Home</a>
+					<a href="module.html" class="breadcrumb">Fluxograma</a>
+				</div>
+			</div>
+		</nav>
+		<div class="row m-b-0">
+			<div class="col s12">
+				<div class="card m-t-15">
+					<div class="row m-0" style="height: 500px;">
+						<div class="col s12 p-0">
+							oi
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="header"></div>
-		<div id="menu"></div>
-		<!-- trocar para porcentagem -->
-		<section class="sectionCSS">
-			<div class="card blue"></div>
-		</section>
-
-		<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-		<div id="footer"></div>
-	</body>
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
-	<script type="text/javascript" src="js/jsBasic.js"></script>
-	<script type="text/javascript" src="js/jsHome.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#loading').addClass('hide');
-		});
-	</script>
+	</section>
+	<div id="footer"></div>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+<script type="text/javascript" src="js/jsBasic.js"></script>
+<script type="text/javascript" src="js/jsHome.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#loading').addClass('hide');
+	});
+</script>
 </html>

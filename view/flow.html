@@ -36,7 +36,7 @@
 			<div class="nav-wrapper deep-purple lighten-1">
 				<div class="col s12 p-l-15">
 					<a href="home.html" class="breadcrumb">Home</a>
-					<a href="flow.html" class="breadcrumb">Fluxograma</a>
+					<a href="flow.html" class="breadcrumb">Módulo</a>
 				</div>
 			</div>
 		</nav>
@@ -128,7 +128,6 @@
         </div>
       </div>
     </div>
-
   </section>
   <div id="footer"></div>
 </body>
@@ -288,28 +287,34 @@
         return true;
       },
       onOperatorUnselect: function() {
-        if($('#deletarOperador').hasClass('scale-in')){
-          $('#deletarOperador').removeClass('scale-in');
-          $('#deletarOperador').addClass('scale-out');
-        }
-        if ($('#editarOperador').hasClass('scale-in')) {
-          $('#editarOperador').removeClass('scale-in');
-          $('#editarOperador').addClass('scale-out');
+        if (setTrash == 'operator') {
+          if($('#deletarOperador').hasClass('scale-in')){
+            $('#deletarOperador').removeClass('scale-in');
+            $('#deletarOperador').addClass('scale-out');
+          }
+          if ($('#editarOperador').hasClass('scale-in')) {
+            $('#editarOperador').removeClass('scale-in');
+            $('#editarOperador').addClass('scale-out');
+          }
         }
         return true;
       },
       onLinkSelect: function(linkId) {
-        if($('#deletarOperador').hasClass('scale-out')){
-          $('#deletarOperador').removeClass('scale-out');
-          $('#deletarOperador').addClass('scale-in');
+        $('#deletarOperador').removeClass('scale-out');
+        $('#deletarOperador').addClass('scale-in');
+        if (setTrash == 'operator' && $('#editarOperador').hasClass('scale-in')) {
+          $('#editarOperador').removeClass('scale-in');
+          $('#editarOperador').addClass('scale-out');
         }
         setTrash = 'link';
         return true;
       },
       onLinkUnselect: function() {
-        if($('#deletarOperador').hasClass('scale-in')){
-          $('#deletarOperador').removeClass('scale-in');
-          $('#deletarOperador').addClass('scale-out');
+        if (setTrash == 'link') {
+          if($('#deletarOperador').hasClass('scale-in')){
+            $('#deletarOperador').removeClass('scale-in');
+            $('#deletarOperador').addClass('scale-out');
+          }
         }
         return true;
       }
