@@ -48,6 +48,9 @@
               <a id="deletarOperador" class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Deletar" style="position: absolute; right: 10px; top: 10px;">
                 <i class="material-icons">delete_outline</i>
               </a>
+              <a id="editarOperador" class="btn-floating btn-large waves-effect waves-light orange btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Editar" style="position: absolute; right: 10px; top: 50px;">
+                <i class="material-icons">edit</i>
+              </a>
               <div id="chart_container">
                 <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
               </div>
@@ -199,7 +202,6 @@
     });
 
     $('#deletarOperador').click(function() {
-      console.log(outputTrash);
       if (setTrash == 'operator') {
         $flowchart.flowchart('deleteSelected');
         $('#seTipo').val('1');
@@ -214,7 +216,35 @@
 
     $('#btnSalvar').click(function() {
       var data = $flowchart.flowchart('getData');
-      console.log(data)
+      var arrayTeste = [];
+      Object.entries(data.operators).forEach((item) => {
+        if (!isEmpty(item[1].properties.outputs)) {
+          var newAttr = {
+            index: item[0],
+            question: '',
+            answers: []
+          };
+          newAttr.question = item[1].properties.title;
+          Object.entries(item[1].properties.outputs).forEach((element) => {
+            newAttr.answers.push({
+              question: element[1].label,
+              priority: "1"
+            });
+          });
+          arrayTeste.push(newAttr);
+        }
+      });
+      Object.entries(data.links).forEach((item) => {
+        for (var i = 0; i < arrayTeste.length; i++) {
+          if (arrayTeste[i].index == item[1].fromOperator) {
+            arrayTeste[i].answers.push({
+              question: data.operators[item[1].toOperator].properties.title,
+              priority: "1"
+            });
+            break;
+          }
+        }
+      });
     });
 
     var $flowchart = $('#example_9');
@@ -246,26 +276,41 @@
       multipleLinksOnInput: true,
       multipleLinksOnOutput: true,
       onOperatorSelect: function(operatorId) {
-        console.log(operatorId);
-        $('#deletarOperador').removeClass('scale-out');
-        $('#deletarOperador').addClass('scale-in');
+        if($('#deletarOperador').hasClass('scale-out')){
+          $('#deletarOperador').removeClass('scale-out');
+          $('#deletarOperador').addClass('scale-in');
+        }
+        if ($('#editarOperador').hasClass('scale-out')) {
+          $('#editarOperador').removeClass('scale-out');
+          $('#editarOperador').addClass('scale-in');
+        }
         setTrash = 'operator';
         return true;
       },
       onOperatorUnselect: function() {
-        $('#deletarOperador').removeClass('scale-in');
-        $('#deletarOperador').addClass('scale-out');
+        if($('#deletarOperador').hasClass('scale-in')){
+          $('#deletarOperador').removeClass('scale-in');
+          $('#deletarOperador').addClass('scale-out');
+        }
+        if ($('#editarOperador').hasClass('scale-in')) {
+          $('#editarOperador').removeClass('scale-in');
+          $('#editarOperador').addClass('scale-out');
+        }
         return true;
       },
       onLinkSelect: function(linkId) {
-        $('#deletarOperador').removeClass('scale-out');
-        $('#deletarOperador').addClass('scale-in');
+        if($('#deletarOperador').hasClass('scale-out')){
+          $('#deletarOperador').removeClass('scale-out');
+          $('#deletarOperador').addClass('scale-in');
+        }
         setTrash = 'link';
         return true;
       },
       onLinkUnselect: function() {
-        $('#deletarOperador').removeClass('scale-in');
-        $('#deletarOperador').addClass('scale-out');
+        if($('#deletarOperador').hasClass('scale-in')){
+          $('#deletarOperador').removeClass('scale-in');
+          $('#deletarOperador').addClass('scale-out');
+        }
         return true;
       }
     });
@@ -366,6 +411,15 @@ function deletarOperador(num) {
     $('#label_'+i).attr('id', 'label_'+(i-1));
   }
   calcSaidas--;
+}
+
+function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
 }
 </script>
 
