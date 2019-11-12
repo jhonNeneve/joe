@@ -1,6 +1,27 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
+    $.ajax({
+        url: '../modal/home.php',
+        type: 'POST',
+        data: {},
+        success: function (data) {
+           var data =  JSON.parse(data);
+    console.log(data.id)
+    console.log(data[0])
+    console.log(data[0].id)
+        //   foreach (data as key => value) {
+        //   data.forEach(montaCards);
+            // for (let i = 0; i < data.length; i++) {
+                
+            //     console.log(data[i])
+            // }
+
+
+        }
+      });
 });
+
+
 
 function menu(menu) {
     if (menu === 'home') {
@@ -12,6 +33,8 @@ function menu(menu) {
     }
 }
 
+function montaCards(item, index){
+console.log(item, index)
 //futuro ajax para o home (puxar informações da tela de fluxo)
 var title = 'My title';
 var description = 'My text ';
@@ -35,3 +58,4 @@ cardFlow.innerHTML += '<div class="col s12 m3">'+
                       '</div>';
 
 
+                    }
