@@ -31,16 +31,51 @@
 			<div class="nav-wrapper deep-purple lighten-1">
 				<div class="col s12 p-l-15">
 					<a href="home.html" class="breadcrumb">Home</a>
-					<a href="module.html" class="breadcrumb">Fluxograma</a>
+					<a href="module.html" class="breadcrumb">Módulo</a>
 				</div>
 			</div>
 		</nav>
 		<div class="row m-b-0">
 			<div class="col s12">
 				<div class="card m-t-15">
-					<div class="row m-0" style="height: 500px;">
+					<div class="row m-0">
+						<div class="col s12 p-0 p-10">
+							<a class="btn-floating waves-effect waves-light tooltipped right" data-position="top" data-tooltip="Novo módulo">
+								<i class="material-icons">add</i>
+							</a>
+						</div>
+					</div>
+					<div class="row m-0">
 						<div class="col s12 p-0">
-							oi
+							<table class="highlight centered">
+              <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Descrição</th>
+                    <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+										<a class="waves-effect waves-light btn-small">
+											<i class="material-icons">cloud</i>
+										</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alan</td>
+                  <td>Jellybean</td>
+                  <td>
+										<a class="waves-effect waves-light btn-small">
+											<i class="material-icons">cloud</i>
+										</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 						</div>
 					</div>
 				</div>
@@ -55,6 +90,7 @@
 <script type="text/javascript" src="js/jsHome.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+    M.AutoInit();
 		$('#loading').addClass('hide');
 	});
 </script>
