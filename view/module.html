@@ -26,7 +26,7 @@
 	</div>
 	<div id="header"></div>
 	<div id="menu"></div>
-	<section class="grey lighten-4" style="margin-left: 207px;">
+	<section class="grey lighten-4" style="margin-left: 207px;min-height: calc(100vh - 114px);">
 		<nav>
 			<div class="nav-wrapper deep-purple lighten-1">
 				<div class="col s12 p-l-15">
@@ -39,50 +39,85 @@
 			<div class="col s12">
 				<div class="card m-t-15">
 					<div class="row m-0">
-						<div class="col s12 p-0 p-10">
-							<a class="btn-floating waves-effect waves-light tooltipped right" data-position="top" data-tooltip="Novo módulo">
+						<div class="col s12" style="padding: 10px 20px;">
+							<a href="#modal1" class="btn-floating waves-effect waves-light tooltipped right modal-trigger" data-position="top" data-tooltip="Novo módulo">
 								<i class="material-icons">add</i>
 							</a>
 						</div>
 					</div>
 					<div class="row m-0">
 						<div class="col s12 p-0">
-							<table class="highlight centered">
-              <thead>
-                <tr>
+							<table class="highlight centered responsive-table">
+                <thead>
+                  <tr>
                     <th>Name</th>
-                    <th>Descrição</th>
+                    <th style="width: 500px;">Descrição</th>
                     <th>Ação</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-										<a class="waves-effect waves-light btn-small">
-											<i class="material-icons">cloud</i>
-										</a>
-                  </td>
-                </tr>
-                <tr>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Alvin</td>
+                    <td class="truncate" style="width: 500px;">Eclair</td>
+                    <td>
+                      <a class="waves-effect waves-teal btn-flat tooltipped" data-position="top" data-tooltip="Excluir">
+                       <i class="material-icons red-text">delete_outline</i>
+                     </a>
+                   </td>
+                 </tr>
+                 <tr>
                   <td>Alan</td>
-                  <td>Jellybean</td>
+                  <td class="truncate" style="width: 500px;">Jellybean vcdsvdsv dvdsvds vdsvdsv dsvdsvds vdsvdsvd svdsvsd vdsvdsvds vdsvds vdsvdsv dsvdsvds vdsvds vdsvds vds gregreg regreg regregre gregre gregre gregre gregreg regreg regreg regreg rev</td>
                   <td>
-										<a class="waves-effect waves-light btn-small">
-											<i class="material-icons">cloud</i>
-										</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div id="footer"></div>
+                    <a class="waves-effect waves-teal btn-flat tooltipped" data-position="top" data-tooltip="Excluir">
+                     <i class="material-icons red-text">delete_outline</i>
+                   </a>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Novo módulo</h4>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="modal-nome" type="text" class="validate">
+        <label for="modal-nome">Nome do módulo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="modal-descricao" class="materialize-textarea"></textarea>
+        <label for="textarea1">Descrioção</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <select multiple>
+          <option value="" disabled selected>Selecione</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Usuários permitidos</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="javascript:void(0)" class="modal-close waves-effect waves-grey btn-flat">Cancelar</a>
+    <a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Salvar</a>
+  </div>
+</div>
+
+<div id="footer"></div>
 </body>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
@@ -91,7 +126,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
     M.AutoInit();
-		$('#loading').addClass('hide');
-	});
+    $('#loading').addClass('hide');
+  });
 </script>
 </html>
