@@ -8,10 +8,9 @@
     $contas->execute();
 
     $dados = array();
-    while($ln = $contas->fetch(PDO::FETCH_ASSOC))    {
-      $dados[] = array($ln);
+    while($ln = $contas->fetch(PDO::FETCH_ASSOC)) {
+      array_push($dados,$ln);
     }
-
     print_r(json_encode($dados));
 
 ?>
