@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>temp</title>
 </head>
+
 <body>
 	<textarea id="text"></textarea>
 	<button id="send">send</button>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#send').click(function() {
-				$.ajax({
-					url: 'salvarTxt.php',
-					type: 'post',
-					data: {
-						'texto': $('#text').val()
-					},
-					success: function (resp) {
-						console.log(resp);
+		$(document).ready(function () {
+
+			let doc = "";
+			let title;
+
+			let arrayTeste = [
+				{
+					"title": "nomedofluxo",
+					"question": "Como abrir uma conta",
+					"answers": [
+						{
+							"question": "Va para uma ag",
+							"priority": "1"
+						},
+						{
+							"question": "Pela internet voce abre uma conta",
+							"prioridade": "3"
+						}
+					]
+				},
+				{
+					"title": "nome do fluxo",
+					"question": "Como (encontrar|chegar) em uma agencia",
+					"answers": [
+						{
+							"question": "Voce encontra uma ag no maps",
+							"priority": "2"
+						},
+						{
+							"question": "Pela internet vc consegue chegar em uma agencia",
+							"prioridade": "3"
+						}
+					]
+				}
+			];
+
+			doc += "! version = 2.0\n\n"
+			doc += "+ *\n";
+			doc += "- Nao entendi\n";
+			doc += "- foi mal nao entendi\n";
+			doc += "- deu ruim!\n\n";
+
+			try {
+				for (let i in arrayTeste) {
+					console.log("i: ", i, "title: ", arrayTeste[i])
+					i == 0 ? title = arrayTeste[i].title : '';
+					console.log(arrayTeste[i].question);
+					doc += ('+ ' + arrayTeste[i].question.toLowerCase());
+					for (let index in (arrayTeste[i].answers)) {
+						doc += ("\n- " + arrayTeste[i].answers[index].question);
+						arrayTeste[i].answers.length - 1 == index ? doc += "\n\n" : '';
 					}
-				});
+				}
+			} catch (error) {
+				alert("Erro ao gerar o arquivo!");
+			}
+			console.log("finished: ", doc);
+
+			$.ajax({
+				url: 'salvarTxt.php',
+				type: 'post',
+				data: {
+					'doc': doc.toString(),
+					'title': title.toString()
+				},
+				success: function (resp) {
+					console.log(resp);
+				}
 			});
 		})
 	</script>
 </body>
+
 </html>

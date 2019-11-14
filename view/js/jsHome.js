@@ -32,7 +32,7 @@ var cardFlow = document.getElementById("cardFlow");
 cardFlow.innerHTML += '<div class="col s12 m3">'+
                         '<div class="card">'+
                            '<div class="card-image waves-effect waves-block waves-light">'+
-                              '<img class="activator" src="images/0.jpg">'+
+                              '<img class="activator" src="images/fluxo.png">'+
                            '</div>'+
                            '<div class="card-content">'+
                               '<span class="card-title activator grey-text text-darken-4">'+ 

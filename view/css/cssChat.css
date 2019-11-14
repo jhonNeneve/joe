@@ -82,7 +82,7 @@ body {
 .chat-thread li:nth-child(odd):before {
 	right: -80px;
   /* // Placeholder avatar 1 */
-	background-image: url('images/chatbot.jpg');
+	background-image: url('../images/chatbot.png');
 }
 
 .chat-thread li:nth-child(odd):after {

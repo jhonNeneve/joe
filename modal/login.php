@@ -1,19 +1,19 @@
 <?php
-	print_r($_POST['texto']);
-	die;
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+//deixar só conexao
 	require '../controller/Conexao.php';
     $db = new Conexao;
     $db = $db->getInstance();
-    $contas = $db->prepare("SELECT * FROM oi WHERE oioi = :num");
+    $acesso = $db->prepare("SELECT * FROM usuario WHERE email = :email and senha = :senha");
 
-    $contas->bindValue(":num", '123');
-    $contas->execute();
+    $acesso->bindValue(":email", $email);
+    $acesso->bindValue(":senha", $senha);
+    $acesso->execute();
 
-    $dados = array();
-    while($ln = $contas->fetch(PDO::FETCH_ASSOC))    {
-      $dados[] = array($ln['oioi']);
+    if(!empty($acesso->fetch(PDO::FETCH_ASSOC))){
+      print_r(json_encode(true));
+    }else{
+      print_r(json_encode(false));
     }
-
-    print_r($dados);
-
 ?>

@@ -1,14 +1,14 @@
 <?php
   require '../controller/Conexao.php';
-  
+  //deixar só conexao
     $db = new Conexao;
     $db = $db->getInstance();
-    $contas = $db->prepare("SELECT id, titulo, descricao FROM fluxo");
+    $card = $db->prepare("SELECT id, titulo, descricao FROM fluxo");
 
-    $contas->execute();
+    $card->execute();
 
     $dados = array();
-    while($ln = $contas->fetch(PDO::FETCH_ASSOC)) {
+    while($ln = $card->fetch(PDO::FETCH_ASSOC)) {
       array_push($dados,$ln);
     }
     print_r(json_encode($dados));

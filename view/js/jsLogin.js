@@ -1,11 +1,10 @@
 $(document).ready(function(){
   $('.tabs').tabs();
   setTimeout(function(){
-
     loginWrapper.classList.toggle('open'); 
   },800);
 
-  });
+});
     
 var openLoginRight = document.querySelector('.h1');
 var loginWrapper = document.querySelector('.login-wrapper');
@@ -14,19 +13,27 @@ openLoginRight.addEventListener('click', function(){
   loginWrapper.classList.toggle('open'); 
 });
 
+$("form").submit(function(e) {
+  e.preventDefault();
+  var email;
+  var senha;
 
-function teste(oi){
-  event.preventDefault();
-  console.log('oi');
-  var oi = ['funcao',oi];
+  for(var valor of $(this).serializeArray()){
 
-  $.ajax({
+    if(valor.name ==='email'){
+      email = valor.value;
+    }
+    senha = (valor.name == 'senha') && valor.value;
+ }
+
+ $.ajax({
     method: "POST",
     url: "/joe/modal/login.php",
-    data: oi,
+    data: {email,senha},
     success: function(result){
-      console.log("nem voltou")
-       
+      if(result == 'true'){
+        window.location.replace('home.html');
+      }       
     }
-})
-}
+  });  
+});
