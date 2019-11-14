@@ -8,12 +8,12 @@
 			addModule();
 			break;
 			
-		case 'getUser':
-			getUser();
+		case 'getUsers':
+			getUsers();
 			break;
 			
-		case 'deleteModules':
-			getUser();
+		case 'deleteModule':
+			deleteModule();
 			break;
 	}
 
@@ -28,23 +28,30 @@
 		include '../modal/module.php';
 		$module = new Module;
 		$temp = '-';
-		if (isset($_POST['permitidos'])) {
+		if (isset($_POST['permitidos']) && !empty($_POST['permitidos'])) {
 			$permitidos = $_POST['permitidos'];
 			foreach ($permitidos as $permitido) {
 				$temp .= $permitido.'-';
 			}
 		}
 		$permitidos = $temp == '-' ? '' : $temp;
-		echo json_encode($module->newModule($_POST['nome'], $_POST['descricao'], $permitidos));
+
+    if ($module->newModule($_POST['nome'], $_POST['descricao'], $permitidos)) {
+      echo $module->getLastId();
+    } else {
+      echo "false";
+    }
 	}
 
-	function getUser() {
-		echo json_encode([]);
+	function getUsers() {
+    include '../modal/user.php';
+    $user = new User;
+		echo json_encode($user->getUsers());
 	}
 
-	function deleteModules() {
+	function deleteModule() {
 		include '../modal/module.php';
 		$module = new Module;
-		echo 'true';
+		echo $module->deleteModule($_POST['id']);
 	}
 ?>

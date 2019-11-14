@@ -31,6 +31,22 @@ class Module extends Conexao{
 		$contas->bindValue(":usuarios", $permitidos);
 		return $contas->execute();
 	}
+
+  function getLastId(){
+    $contas = $this->db->prepare("SELECT id FROM modulo ORDER BY id DESC LIMIT 1");
+    $contas->execute();
+    $id = 'false';
+    while($ln = $contas->fetch(PDO::FETCH_ASSOC)){
+      $id = $ln['id'];
+    }
+    return $id;
+  }
+
+  function deleteModule($id) {
+    $contas = $this->db->prepare("DELETE FROM modulo WHERE id = :id");
+    $contas->bindValue(":id", $id);
+    return $contas->execute();
+  }
 }
 
 ?>
