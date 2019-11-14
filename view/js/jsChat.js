@@ -112,24 +112,20 @@ function gotReceiveChannel (event) {
     receiveChannel.onmessage = handleMessage;
     receiveChannel.onopen = handleReceiveChannelStateChange;
     receiveChannel.onclose = handleReceiveChannelStateChange;
-    console.log(receiveChannel)
 }
 
 function handleMessage (event) {
-    console.log("handleMessage")
     var chatNewThread = document.createElement('li'),
     	chatNewMessage = document.createTextNode(event.data);
 
     // Add message to chat thread and scroll to bottom
     chatNewThread.appendChild(chatNewMessage);
     chatThread.appendChild(chatNewThread);
-
-    chatThread.scrollTop = 100;
+    chatThread.scrollTop = chatThread.scrollHeight;
 
     // Clear text value
     chatWindowMessage.value = '';
 }
-
 
 function handleSendChannelStateChange () {
     var readyState = sendChannel.readyState;

@@ -58,7 +58,7 @@ ul.sidenav.sidenav-fixed {
 }
 
 #footer{
-  position: fixed;
+  position: absolute;
   bottom:0;
   width:100%;
   left: 0;  
