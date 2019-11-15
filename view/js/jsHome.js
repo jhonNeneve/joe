@@ -8,7 +8,7 @@ $(document).ready(function () {
            var data =  JSON.parse(data);
 
            for (let i = 0; i < data.length; i++) {
-            montaCards(data[i].titulo, data[i].descricao)             
+            montaCards(data[i].titulo, data[i].descricao, data[i].id)             
            }
         }
       });
@@ -22,12 +22,12 @@ function menu(menu) {
     } else if (menu === 'module') {
         window.location.replace('module.html');
     } else {
-        window.location.replace('flow.html');
+        window.location.replace('flow.php');
     }
 }
 
-function montaCards(title, description){
-var address = 'blablabla ';
+function montaCards(title, description, id){
+var address = 'flow.php?hash='+id;
 var cardFlow = document.getElementById("cardFlow");
 cardFlow.innerHTML += '<div class="col s12 m3">'+
                         '<div class="card">'+

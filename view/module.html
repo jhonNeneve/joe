@@ -127,8 +127,8 @@
         let users = JSON.parse(resp);
         users.forEach(iten => {
           $('#modal-permitidos').append('<option value="'+iten.id+'">'+iten.nome+'</option>');
-          $('#modal-permitidos').formSelect();
         });
+        $('#modal-permitidos').formSelect();
       }
     });
 

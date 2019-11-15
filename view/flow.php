@@ -6,14 +6,14 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/lib/materialize/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/lib/jquery/jquery.flowchart.min.css">
-  </link>
+</link>
 
-  <link rel="stylesheet" type="text/css" href="css/custom.css">
-  <link rel="stylesheet" type="text/css" href="css/cssHome.css">
-  <link rel="stylesheet" type="text/css" href="css/cssBasic.css">
-  <!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="stylesheet" type="text/css" href="css/cssHome.css">
+<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
 
-  <title>Chat Joe</title>
+<title>Chat Joe</title>
 </head>
 
 <body class="p-b-50 p-relative">
@@ -49,97 +49,103 @@
           <div class="row m-0" style="height: 500px;">
             <div class="col s8 p-0" style="position: relative;">
               <a id="deletarOperador"
-                class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-out"
-                data-position="left" data-tooltip="Deletar" style="position: absolute; right: 10px; top: 10px;">
-                <i class="material-icons">delete_outline</i>
-              </a>
-              <a id="editarOperador"
-                class="btn-floating btn-large waves-effect waves-light orange btn-small tooltipped scale-transition scale-out"
-                data-position="left" data-tooltip="Editar" style="position: absolute; right: 10px; top: 50px;">
-                <i class="material-icons">edit</i>
-              </a>
-              <div id="chart_container">
-                <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
-              </div>
-            </div>
-            <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
-              <div class="row m-0" style="height: calc(100% - 52px);border-bottom: 1px solid #ddd;">
-                <div class="col s12 p-0" style="height: 100%;">
-                  <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
-                    <li style="max-height: calc(100% - 110px);">
-                      <div class="collapsible-header p-10"><i class="material-icons">chrome_reader_mode</i>Informações
-                        gerais</div>
-                      <div class="collapsible-body p-10" style="max-height: 358px;">
-                        <div class="row m-0">
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <input id="inTitulo" type="text">
-                            <label for="inTitulo">Título</label>
-                          </div>
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <input id="inDescricao" type="text">
-                            <label for="inDescricao">Descrição</label>
-                          </div>
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <input id="inLargura" type="number" minlength="500" value="2000">
-                            <label for="inLargura">Largura</label>
-                          </div>
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <input id="inAltura" type="number" minlength="500" value="2000">
-                            <label for="inAltura">Altura</label>
-                          </div>
+              class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-out"
+              data-position="left" data-tooltip="Deletar" style="position: absolute; right: 10px; top: 10px;">
+              <i class="material-icons">delete_outline</i>
+            </a>
+            <a id="editarOperador"
+            class="btn-floating btn-large waves-effect waves-light orange btn-small tooltipped scale-transition scale-out"
+            data-position="left" data-tooltip="Editar" style="position: absolute; right: 10px; top: 50px;">
+            <i class="material-icons">edit</i>
+          </a>
+          <div id="chart_container">
+            <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
+          </div>
+        </div>
+        <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
+          <div class="row m-0" style="height: calc(100% - 52px);border-bottom: 1px solid #ddd;">
+            <div class="col s12 p-0" style="height: 100%;">
+              <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
+                <li>
+                  <div class="collapsible-header p-10"><i class="material-icons">chrome_reader_mode</i>Informações
+                  gerais</div>
+                  <div class="collapsible-body p-10" style="max-height: 358px;">
+                    <div class="row m-0">
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <input id="inTitulo" type="text">
+                        <label for="inTitulo">Título</label>
+                      </div>
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <input id="inDescricao" type="text">
+                        <label for="inDescricao">Descrição</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <select id="seModulo">
+                          <option value="" disabled selected>Selecione</option>
+                        </select>
+                        <label>Módulo</label>
+                      </div>
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <input id="inLargura" type="number" minlength="500" value="2000">
+                        <label for="inLargura">Largura</label>
+                      </div>
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <input id="inAltura" type="number" minlength="500" value="2000">
+                        <label for="inAltura">Altura</label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li style="max-height: calc(100% - 110px);">
+                  <div class="collapsible-header p-10"><i class="material-icons">question_answer</i>Novo operador
+                  </div>
+                  <div class="collapsible-body p-10" style="max-height: 358px;">
+                    <div class="row m-0">
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <select id="seTipo">
+                          <option value="1">Pergunta</option>
+                          <option value="2">Afirmação</option>
+                        </select>
+                        <label>Tipo</label>
+                      </div>
+                      <div class="input-field col s12 m-0 m-t-10">
+                        <input id="inFrase" type="text">
+                        <label for="inFrase">Frase</label>
+                      </div>
+                      <div id="divInput" class="scale-transition">
+                        <div class="input-field col s12 m-0 m-t-10">
+                          <a class="waves-effect waves-teal btn-flat right" id="newInSaida">
+                            <i class="material-icons">add</i>
+                          </a>
+                          <h6 class="deep-purple-text">Respostas</h6>
+                          <hr style="border-color: #673ab7;">
                         </div>
+                        <div id="inSaida"></div>
                       </div>
-                    </li>
-                    <li style="max-height: calc(100% - 110px);">
-                      <div class="collapsible-header p-10"><i class="material-icons">question_answer</i>Novo operador
+                      <div class="col s12 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
+                        <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle"
+                        style="height: 32.4px; line-height: 23px; text-align: center;width: 100%;">
+                        Operador
                       </div>
-                      <div class="collapsible-body p-10" style="max-height: 358px;">
-                        <div class="row m-0">
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <select id="seTipo">
-                              <option value="1">Pergunta</option>
-                              <option value="2">Afirmação</option>
-                            </select>
-                            <label>Tipo</label>
-                          </div>
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <input id="inFrase" type="text">
-                            <label for="inFrase">Frase</label>
-                          </div>
-                          <div id="divInput" class="scale-transition">
-                            <div class="input-field col s12 m-0 m-t-10">
-                              <a class="waves-effect waves-teal btn-flat right" id="newInSaida">
-                                <i class="material-icons">add</i>
-                              </a>
-                              <h6 class="deep-purple-text">Respostas</h6>
-                              <hr style="border-color: #673ab7;">
-                            </div>
-                            <div id="inSaida"></div>
-                          </div>
-                          <div class="col s12 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
-                            <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle"
-                              style="height: 32.4px; line-height: 23px; text-align: center;width: 100%;">
-                              Operador
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row m-0">
-                <div class="col s12 p-0">
-                  <a id="btnSalvar" class="btn btn-small waves-effect waves-light d-block m-10">Salvar</a>
-                </div>
-              </div>
-            </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col s12 p-0">
+            <a id="btnSalvar" class="btn btn-small waves-effect waves-light d-block m-10">Salvar</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <div id="footer"></div>
+  </div>
+</div>
+</div>
+</section>
+<div id="footer"></div>
 </body>
 <script type="text/javascript" src="js/lib/jquery/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery-ui.min.js"></script>
@@ -152,6 +158,8 @@
 <script type="text/javascript" src="js/jsBasic.js"></script>
 <script type="text/javascript" src="js/jsHome.js"></script>
 <script type="text/javascript">
+  $flowchart = $('#example_9');
+
   $(document).ready(function () {
     M.AutoInit();
     calcSaidas = 0;
@@ -226,43 +234,72 @@
 
     $('#btnSalvar').click(function () {
       var data = $flowchart.flowchart('getData');
-      var arrayTeste = [];
-      Object.entries(data.operators).forEach((item) => {
-        if (!isEmpty(item[1].properties.outputs)) {
-          var newAttr = {
-            index: item[0],
-            question: '',
-            answers: []
-          };
-          newAttr.question = item[1].properties.title;
-          Object.entries(item[1].properties.outputs).forEach((element) => {
-            newAttr.answers.push({
-              question: element[1].label,
-              priority: "1"
-            });
+      $.ajax({
+        url: '../controller/flow.php',
+        type: 'POST',
+        data:{
+          fun: 'saveFlow',
+          titulo: $('#inTitulo').val(),
+          descricao: $('#inDescricao').val(),
+          largura: $('#inLargura').val(),
+          altura: $('#inAltura').val(),
+          fluxo: data,
+          modulo: $('#seModulo').val()
+        },
+        success: resp => {
+          var arrayTeste = [];
+          Object.entries(data.operators).forEach((item) => {
+            if (!isEmpty(item[1].properties.outputs)) {
+              var newAttr = {
+                index: item[0],
+                question: '',
+                answers: []
+              };
+              newAttr.question = item[1].properties.title;
+              Object.entries(item[1].properties.outputs).forEach((element) => {
+                newAttr.answers.push({
+                  question: element[1].label,
+                  priority: "1"
+                });
+              });
+              arrayTeste.push(newAttr);
+            }
           });
-          arrayTeste.push(newAttr);
-        }
-      });
-      Object.entries(data.links).forEach((item) => {
-        for (var i = 0; i < arrayTeste.length; i++) {
-          if (arrayTeste[i].index == item[1].fromOperator) {
-            arrayTeste[i].answers.push({
-              question: data.operators[item[1].toOperator].properties.title,
-              priority: "1"
-            });
-            break;
-          }
-        }
-      });
+          Object.entries(data.links).forEach((item) => {
+            for (var i = 0; i < arrayTeste.length; i++) {
+              if (arrayTeste[i].index == item[1].fromOperator) {
+                arrayTeste[i].answers.push({
+                  question: data.operators[item[1].toOperator].properties.title,
+                  priority: "1"
+                });
+                break;
+              }
+            }
+          });
 
-      // TRATAMENTO DE OBJETO
-      console.log('Array teste ', arrayTeste);
-      let trataObj = new TrataObjeto(arrayTeste, $('#inTitulo').val());
-      trataObj.start();
+          // TRATAMENTO DE OBJETO
+          console.log('Array teste ', arrayTeste);
+          let trataObj = new TrataObjeto(arrayTeste, $('#inTitulo').val());
+          trataObj.start();
+        }
+      });
     });
 
-    var $flowchart = $('#example_9');
+    $.ajax({
+      url: '../controller/module.php',
+      type: 'POST',
+      data:{
+        fun: 'getModules'
+      },
+      success: resp => {
+        let modules = JSON.parse(resp);
+        modules.forEach(iten => {
+          $('#seModulo').append('<option value="'+iten.id+'">'+iten.nome+'</option>');
+        });
+        $('#seModulo').formSelect();
+      }
+    });
+
     var $container = $flowchart.parent();
 
     // Panzoom initialization...
@@ -365,21 +402,41 @@
           elOffset.left < containerOffset.left + $container.width() &&
           elOffset.top < containerOffset.top + $container.height()) {
           var flowchartOffset = $flowchart.offset();
-          var relativeLeft = elOffset.left - flowchartOffset.left;
-          var relativeTop = elOffset.top - flowchartOffset.top;
+        var relativeLeft = elOffset.left - flowchartOffset.left;
+        var relativeTop = elOffset.top - flowchartOffset.top;
 
-          var positionRatio = $flowchart.flowchart('getPositionRatio');
-          relativeLeft /= positionRatio;
-          relativeTop /= positionRatio;
+        var positionRatio = $flowchart.flowchart('getPositionRatio');
+        relativeLeft /= positionRatio;
+        relativeTop /= positionRatio;
 
-          var data = getOperatorData($this);
-          data.left = relativeLeft;
-          data.top = relativeTop;
+        var data = getOperatorData($this);
+        data.left = relativeLeft;
+        data.top = relativeTop;
 
-          $flowchart.flowchart('addOperator', data);
-        }
+        $flowchart.flowchart('addOperator', data);
       }
-    });
+    }
+  });
+
+    <?php if (isset($_GET['hash'])) { ?>
+      $.ajax({
+        url: '../controller/flow.php',
+        type: 'POST',
+        data:{
+          fun: 'getFlow',
+          hash: <?php echo $_GET['hash']; ?>
+        },
+        success: resp => {
+          resp = JSON.parse(resp);
+          $('#inTitulo').val(resp.titulo);
+          $('#inDescricao').val(resp.descricao);
+          $('#inLargura').val(resp.largura);
+          $('#inAltura').val(resp.altura);
+          $('#seModulo').val(resp.modulo);
+          $flowchart.flowchart('setData', JSON.parse(resp.fluxo));
+        }
+      });
+    <?php } ?>
 
     function getOperatorData($element) {
       var data = {
@@ -420,27 +477,27 @@
     $('#loading').addClass('hide');
   });
 
-  function deletarOperador(num) {
-    $('#div_output_' + num).remove();
-    for (var i = (num + 1); i < calcSaidas; i++) {
-      $('#label_' + i).html('Resposta ' + (i - 1));
-      $('#label_' + i).attr('for', 'output_' + (i - 1));
-      $('#div_output_' + i + ' a').attr('onclick', 'deletarOperador(' + (i - 1) + ');');
-      $('#div_output_' + i).attr('id', 'div_output_' + (i - 1));
-      $('#output_' + i).attr('id', 'output_' + (i - 1));
-      $('#label_' + i).attr('id', 'label_' + (i - 1));
-    }
-    calcSaidas--;
+function deletarOperador(num) {
+  $('#div_output_' + num).remove();
+  for (var i = (num + 1); i < calcSaidas; i++) {
+    $('#label_' + i).html('Resposta ' + (i - 1));
+    $('#label_' + i).attr('for', 'output_' + (i - 1));
+    $('#div_output_' + i + ' a').attr('onclick', 'deletarOperador(' + (i - 1) + ');');
+    $('#div_output_' + i).attr('id', 'div_output_' + (i - 1));
+    $('#output_' + i).attr('id', 'output_' + (i - 1));
+    $('#label_' + i).attr('id', 'label_' + (i - 1));
+  }
+  calcSaidas--;
+}
+
+function isEmpty(obj) {
+  for (var prop in obj) {
+    if (obj.hasOwnProperty(prop))
+      return false;
   }
 
-  function isEmpty(obj) {
-    for (var prop in obj) {
-      if (obj.hasOwnProperty(prop))
-        return false;
-    }
-
-    return true;
-  }
+  return true;
+}
 </script>
 
 </html>
