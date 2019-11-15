@@ -19,3 +19,7 @@ header, main, footer {
 .top-nav{
     height: 64px;
 }
+
+.deleteHome{
+    margin-top: 8%;
+}

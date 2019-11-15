@@ -1,9 +1,9 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
     $.ajax({
-        url: '../modal/home.php',
+        url: '../controller/home.php',
         type: 'POST',
-        data: {},
+        data: {func: 'getFlow'},
         success: function (data) {
            var data =  JSON.parse(data);
 
@@ -38,11 +38,41 @@ cardFlow.innerHTML += '<div class="col s12 m3">'+
                               '<span class="card-title activator grey-text text-darken-4">'+ 
                               title +'<i class="material-icons right">more_vert</i></span>'+
                               '<p><a href="'+address+'">Acessar Fluxo</a></p>'+
+                              '<div class="col s8 p-0">'+
+                                    '<a id="deletarOperador"'+
+                                    'class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-in"'+
+                                    'data-position="left"'+
+                                    'data-tooltip="Deletar"'+
+                                    'style="position: absolute; right: 10px; top: 10px;">'+
+                                        '<i class="material-icons deleteHome right" onclick="deleteFlow('+id+');">delete_outline</i>'+
+                                    '</a>'+
+                                '</div>'+
                            '</div>'+
                            '<div class="card-reveal">'+
-                              '<span class="card-title grey-text text-darken-4">'+ title +'<i class="material-icons right">close</i></span>'+
+                              '<span class="card-title grey-text text-darken-4">'+ title +
+                                '<i class="material-icons right">close</i>'+
+                                '</span>'+
                               '<p>'+ description +'</p>'+
                            '</div>'+
                         '</div>'+
                       '</div>';
                     }
+
+
+function deleteFlow(fluxoId){
+
+    $.ajax({
+        url: '../controller/home.php',
+        type: 'POST',
+        data: {fluxoId,
+            func: 'deleteFlow'},
+        success: function (data) {
+            if(data == 'true'){
+                M.toast({html: 'Deletado com sucesso!'})
+                setTimeout(function(){ 
+                    window.location.replace('home.html');
+                }, 3000);
+            }
+        }
+    })
+};
