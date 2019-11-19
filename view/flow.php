@@ -269,7 +269,7 @@
             outputs.push($('#output_' + i).val());
           }
         }
-        dataOp.properties.outputs = [];
+        dataOp.properties.outputs = {};
         for (i = 0; i < calcSaidas; i++) {
           dataOp.properties.outputs['output_' + i] = {
             label: outputs[i]
@@ -280,22 +280,28 @@
     });
 
     $('#btnSalvar').click(function () {
-      var data = $flowchart.flowchart('getData');
+      var hash = false;
+      <?php if (isset($_GET['hash'])) { ?>
+        hash = <?php echo $_GET['hash']; ?>;
+      <?php } ?>
+      var fluxo = $flowchart.flowchart('getData');
+      console.log(JSON.stringify(fluxo));
       $.ajax({
         url: '../controller/flow.php',
         type: 'POST',
         data:{
           fun: 'saveFlow',
+          hash: hash,
           titulo: $('#inTitulo').val(),
           descricao: $('#inDescricao').val(),
           largura: $('#inLargura').val(),
           altura: $('#inAltura').val(),
-          fluxo: data,
+          fluxo: JSON.stringify(fluxo),
           modulo: $('#seModulo').val()
         },
         success: resp => {
           var arrayTeste = [];
-          Object.entries(data.operators).forEach((item) => {
+          Object.entries(fluxo.operators).forEach((item) => {
             if (!isEmpty(item[1].properties.outputs)) {
               var newAttr = {
                 index: item[0],
@@ -312,11 +318,11 @@
               arrayTeste.push(newAttr);
             }
           });
-          Object.entries(data.links).forEach((item) => {
+          Object.entries(fluxo.links).forEach((item) => {
             for (var i = 0; i < arrayTeste.length; i++) {
               if (arrayTeste[i].index == item[1].fromOperator) {
                 arrayTeste[i].answers.push({
-                  question: data.operators[item[1].toOperator].properties.title,
+                  question: fluxo.operators[item[1].toOperator].properties.title,
                   priority: "1"
                 });
                 break;
