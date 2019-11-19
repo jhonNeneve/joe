@@ -160,6 +160,9 @@
 <script type="text/javascript" src="js/jsHome.js"></script>
 <script type="text/javascript">
   $flowchart = $('#example_9');
+  <?php if (isset($_GET['hash'])) { ?>
+    hash = <?php echo $_GET['hash']; ?>
+  <?php } ?>
 
   $(document).ready(function () {
     M.AutoInit();
@@ -239,7 +242,7 @@
         idOp = $flowchart.flowchart('getSelectedOperatorId');
         dataOp = $flowchart.flowchart('getOperatorData', idOp);
         $('#inFrase').val(dataOp.properties.title);
-        if (Object.keys(dataOp.properties.outputs).length > 0) {
+        if (typeof dataOp.properties.outputs !== 'undefined') {
           Object.entries(dataOp.properties.outputs).forEach(iten => {
             $('#inSaida').append('\
               <div id="div_output_'+ calcSaidas + '" class="input-field col s12 m-0 m-t-10">\
@@ -259,43 +262,50 @@
     });
 
     $('#saveOperador').click(function () {
-        idOp = $flowchart.flowchart('getSelectedOperatorId');
-        dataOp = $flowchart.flowchart('getOperatorData', idOp);
-        dataOp.properties.title = $('#inFrase').val();
+      idOp = $flowchart.flowchart('getSelectedOperatorId');
+      dataOp = $flowchart.flowchart('getOperatorData', idOp);
+      dataOp.properties.title = $('#inFrase').val();
 
-        var outputs = [];
-        if ($('#inSaida').html() != '') {
-          for (var i = 0; i < calcSaidas; i++) {
-            outputs.push($('#output_' + i).val());
-          }
+      var outputs = [];
+      if ($('#inSaida').html() != '') {
+        for (var i = 0; i < calcSaidas; i++) {
+          outputs.push($('#output_' + i).val());
         }
-        dataOp.properties.outputs = [];
-        for (i = 0; i < calcSaidas; i++) {
-          dataOp.properties.outputs['output_' + i] = {
-            label: outputs[i]
-          };
-        }
+      }
+      dataOp.properties.outputs = [];
+      for (i = 0; i < calcSaidas; i++) {
+        dataOp.properties.outputs['output_' + i] = {
+          label: outputs[i]
+        };
+      }
 
-        $flowchart.flowchart('setOperatorData', idOp, dataOp);
+      $flowchart.flowchart('setOperatorData', idOp, dataOp);
     });
 
     $('#btnSalvar').click(function () {
-      var data = $flowchart.flowchart('getData');
+      var fluxo = $flowchart.flowchart('getData');
+      console.log(fluxo.operators);
+      if (typeof hash !== 'undefined') {
+        id = hash;
+      } else {
+        id = false;
+      }
       $.ajax({
         url: '../controller/flow.php',
         type: 'POST',
         data:{
           fun: 'saveFlow',
+          id: id,
           titulo: $('#inTitulo').val(),
           descricao: $('#inDescricao').val(),
           largura: $('#inLargura').val(),
           altura: $('#inAltura').val(),
-          fluxo: data,
+          fluxo: fluxo,
           modulo: $('#seModulo').val()
         },
         success: resp => {
           var arrayTeste = [];
-          Object.entries(data.operators).forEach((item) => {
+          Object.entries(fluxo.operators).forEach((item) => {
             if (!isEmpty(item[1].properties.outputs)) {
               var newAttr = {
                 index: item[0],
@@ -312,11 +322,11 @@
               arrayTeste.push(newAttr);
             }
           });
-          Object.entries(data.links).forEach((item) => {
+          Object.entries(fluxo.links).forEach((item) => {
             for (var i = 0; i < arrayTeste.length; i++) {
               if (arrayTeste[i].index == item[1].fromOperator) {
                 arrayTeste[i].answers.push({
-                  question: data.operators[item[1].toOperator].properties.title,
+                  question: fluxo.operators[item[1].toOperator].properties.title,
                   priority: "1"
                 });
                 break;
@@ -480,6 +490,7 @@
         },
         success: resp => {
           resp = JSON.parse(resp);
+          console.log(JSON.parse(resp.fluxo));
           $('#inTitulo').val(resp.titulo);
           $('#inDescricao').val(resp.descricao);
           $('#inLargura').val(resp.largura);
