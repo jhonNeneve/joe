@@ -1,19 +1,25 @@
 <?php
-  $email = $_POST['email'];
-  $senha = $_POST['senha'];
-//deixar só conexao
-	require '../controller/Conexao.php';
-    $db = new Conexao;
-    $db = $db->getInstance();
-    $acesso = $db->prepare("SELECT * FROM usuario WHERE email = :email and senha = :senha");
+include 'Conexao.php';
+class Login extends Conexao{
+  private $db;
 
-    $acesso->bindValue(":email", $email);
-    $acesso->bindValue(":senha", $senha);
-    $acesso->execute();
+  function __construct() {
+    $this->db = Conexao::getInstance();
+  }
 
-    if(!empty($acesso->fetch(PDO::FETCH_ASSOC))){
-      print_r(json_encode(true));
-    }else{
-      print_r(json_encode(false));
+  function login($email, $senha){
+    $stmt = $this->db->prepare("SELECT * FROM usuario WHERE email = :email and senha = :senha");
+
+    $stmt->bindValue(":email", $email);
+    $stmt->bindValue(":senha", md5($senha)/*$senha*/);
+    $stmt->execute();
+
+    $dados = false;
+    while($ln = $stmt->fetch(PDO::FETCH_ASSOC))    {
+      $dados = $ln;
     }
+    return $dados;
+  }
+}
+
 ?>

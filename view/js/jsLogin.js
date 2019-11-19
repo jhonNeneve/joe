@@ -28,11 +28,17 @@ $("form").submit(function(e) {
 
  $.ajax({
     method: "POST",
-    url: "/joe/modal/login.php",
-    data: {email,senha},
+    url: "../controller/login.php",
+    data: {
+      fun: 'login',
+      email: email,
+      senha: senha
+    },
     success: function(result){
-      if(result == 'true'){
-        window.location.replace('home.html');
+      console.log(result);
+      return;
+      if(result != 'false'){
+        window.location.replace(result);
       }       
     }
   });  
