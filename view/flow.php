@@ -160,9 +160,7 @@
 <script type="text/javascript" src="js/jsHome.js"></script>
 <script type="text/javascript">
   $flowchart = $('#example_9');
-  <?php if (isset($_GET['hash'])) { ?>
-    hash = <?php echo $_GET['hash']; ?>
-  <?php } ?>
+  hash = <?php echo isset($_GET['hash']) ? $_GET['hash'] : 0; ?>;
 
   $(document).ready(function () {
     M.AutoInit();
@@ -265,42 +263,34 @@
       idOp = $flowchart.flowchart('getSelectedOperatorId');
       dataOp = $flowchart.flowchart('getOperatorData', idOp);
       dataOp.properties.title = $('#inFrase').val();
-
       var outputs = [];
       if ($('#inSaida').html() != '') {
         for (var i = 0; i < calcSaidas; i++) {
           outputs.push($('#output_' + i).val());
         }
       }
-      dataOp.properties.outputs = [];
+      dataOp.properties.outputs = {};
       for (i = 0; i < calcSaidas; i++) {
         dataOp.properties.outputs['output_' + i] = {
           label: outputs[i]
         };
       }
-
       $flowchart.flowchart('setOperatorData', idOp, dataOp);
     });
 
     $('#btnSalvar').click(function () {
       var fluxo = $flowchart.flowchart('getData');
-      console.log(fluxo.operators);
-      if (typeof hash !== 'undefined') {
-        id = hash;
-      } else {
-        id = false;
-      }
       $.ajax({
         url: '../controller/flow.php',
         type: 'POST',
         data:{
           fun: 'saveFlow',
-          id: id,
+          hash: hash,
           titulo: $('#inTitulo').val(),
           descricao: $('#inDescricao').val(),
           largura: $('#inLargura').val(),
           altura: $('#inAltura').val(),
-          fluxo: fluxo,
+          fluxo: JSON.stringify(fluxo),
           modulo: $('#seModulo').val()
         },
         success: resp => {
@@ -480,65 +470,65 @@
     }
   });
 
-    <?php if (isset($_GET['hash'])) { ?>
-      $.ajax({
-        url: '../controller/flow.php',
-        type: 'POST',
-        data:{
-          fun: 'getFlow',
-          hash: <?php echo $_GET['hash']; ?>
-        },
-        success: resp => {
-          resp = JSON.parse(resp);
-          console.log(JSON.parse(resp.fluxo));
-          $('#inTitulo').val(resp.titulo);
-          $('#inDescricao').val(resp.descricao);
-          $('#inLargura').val(resp.largura);
-          $('#inAltura').val(resp.altura);
-          $('#seModulo').val(resp.modulo);
-          $flowchart.flowchart('setData', JSON.parse(resp.fluxo));
-        }
-      });
-    <?php } ?>
-
-    function getOperatorData($element) {
-      var data = {
-        properties: {
-          title: $('#inFrase').val(),
-          inputs: {},
-          outputs: {}
-        }
-      };
-
-
-      var outputs = [];
-      if ($('#inSaida').html() != '') {
-        for (var i = 0; i < calcSaidas; i++) {
-          outputs.push($('#output_' + i).val());
-        }
-      }
-
-      //Entradas
-      data.properties.inputs['input'] = {
-        label: 'Entrada'
-      };
-      //Saidas
-      for (i = 0; i < calcSaidas; i++) {
-        data.properties.outputs['output_' + i] = {
-          label: outputs[i]
-        };
-      }
-      return data;
+  <?php if (isset($_GET['hash'])) { ?>
+  $.ajax({
+    url: '../controller/flow.php',
+    type: 'POST',
+    data:{
+      fun: 'getFlow',
+      hash: <?php echo $_GET['hash']; ?>
+    },
+    success: resp => {
+      resp = JSON.parse(resp);
+      console.log(JSON.parse(resp.fluxo));
+      $('#inTitulo').val(resp.titulo);
+      $('#inDescricao').val(resp.descricao);
+      $('#inLargura').val(resp.largura);
+      $('#inAltura').val(resp.altura);
+      $('#seModulo').val(resp.modulo);
+      $flowchart.flowchart('setData', JSON.parse(resp.fluxo));
     }
-
-    function restOperador() {
-      outputs = [];
-      calcSaidas = 0;
-      $('#inSaida').html('');
-    }
-
-    $('#loading').addClass('hide');
   });
+  <?php } ?>
+
+  function getOperatorData($element) {
+    var data = {
+      properties: {
+        title: $('#inFrase').val(),
+        inputs: {},
+        outputs: {}
+      }
+    };
+
+
+    var outputs = [];
+    if ($('#inSaida').html() != '') {
+      for (var i = 0; i < calcSaidas; i++) {
+        outputs.push($('#output_' + i).val());
+      }
+    }
+
+    //Entradas
+    data.properties.inputs['input'] = {
+      label: 'Entrada'
+    };
+    //Saidas
+    for (i = 0; i < calcSaidas; i++) {
+      data.properties.outputs['output_' + i] = {
+        label: outputs[i]
+      };
+    }
+    return data;
+  }
+
+  function restOperador() {
+    outputs = [];
+    calcSaidas = 0;
+    $('#inSaida').html('');
+  }
+
+  $('#loading').addClass('hide');
+});
 
 function deletarOperador(num) {
   $('#div_output_' + num).remove();
