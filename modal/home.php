@@ -1,16 +1,27 @@
 <?php
-  require '../controller/Conexao.php';
-  
-    $db = new Conexao;
-    $db = $db->getInstance();
-    $contas = $db->prepare("SELECT id, titulo, descricao FROM fluxo");
+include 'Conexao.php';
+class home extends Conexao{
+    private $db;
 
-    $contas->execute();
-
-    $dados = array();
-    while($ln = $contas->fetch(PDO::FETCH_ASSOC)) {
-      array_push($dados,$ln);
+    function __construct() {
+        $this->db = Conexao::getInstance();
     }
-    print_r(json_encode($dados));
 
+    function getFlow(){
+        $flow = $this->db->prepare("SELECT id, titulo, descricao FROM fluxo");
+        $flow->execute();
+
+        $dados = array();
+        while($ln = $flow->fetch(PDO::FETCH_ASSOC)) {
+            array_push($dados,$ln);
+        }
+        return $dados;
+    }
+        
+    function deleteFlow($id){
+        $flow = $this->db->prepare("DELETE FROM fluxo where id = :id");
+        $id = $flow->bindValue(":id", $id);
+        return $flow->execute();
+    }
+}
 ?>

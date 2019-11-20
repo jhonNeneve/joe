@@ -14,7 +14,11 @@ const brains = [
 //   ];
 
 bot.loadFile(brains).then(botReady).catch(botNotReady);
+<<<<<<< HEAD
 // console.log('loadFile', bot.loadFile(brains).then(botReady).catch(botNotReady))
+=======
+//console.log('loadFile', bot.loadFile(brains).then(botReady).catch(botNotReady))
+>>>>>>> a88aea3383476136c7e413d91d6790982dc53dc8
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -23,14 +27,14 @@ form.addEventListener('submit', (e) => {
 });
 
 function botReply(message) {
-  console.log("bot reply", message);
+ // console.log("bot reply", message);
   $('.chat-thread').append(`<li>${message}</li>`)
   // message_container.innerHTML += `<div class="bot">${message}</div>`;
   location.href = '#edge';
 }
 
 function selfReply(message) {
-  console.log('message: ', message)
+  //console.log('message: ', message)
   $('.chat-thread').append(`<li>${message}</li>`)
   // message_container.innerHTML += `<div class="self">${message}</div>`;
   location.href = '#edge';

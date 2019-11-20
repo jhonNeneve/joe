@@ -1,19 +1,25 @@
 <?php
-	print_r($_POST['texto']);
-	die;
-	require '../controller/Conexao.php';
-    $db = new Conexao;
-    $db = $db->getInstance();
-    $contas = $db->prepare("SELECT * FROM oi WHERE oioi = :num");
+include 'Conexao.php';
+class Login extends Conexao{
+  private $db;
 
-    $contas->bindValue(":num", '123');
-    $contas->execute();
+  function __construct() {
+    $this->db = Conexao::getInstance();
+  }
 
-    $dados = array();
-    while($ln = $contas->fetch(PDO::FETCH_ASSOC))    {
-      $dados[] = array($ln['oioi']);
+  function login($email, $senha){
+    $stmt = $this->db->prepare("SELECT * FROM usuario WHERE email = :email and senha = :senha");
+
+    $stmt->bindValue(":email", $email);
+    $stmt->bindValue(":senha", md5($senha)/*$senha*/);
+    $stmt->execute();
+
+    $dados = false;
+    while($ln = $stmt->fetch(PDO::FETCH_ASSOC))    {
+      $dados = $ln;
     }
-
-    print_r($dados);
+    return $dados;
+  }
+}
 
 ?>

@@ -1,6 +1,7 @@
 ! version = 2.0
 
 + *
+<<<<<<< HEAD
 - Não entendi, pode perguntar de outra forma?
 - Acho que não entendi, poderia perguntar novamente?
 - Desculpe, não entendi
@@ -283,4 +284,650 @@
 - Maravilha, faça uma pergunta 
 - Ótimo, me pergunte alguma coisa
 - Que bom, estou bem também 
+=======
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ nkn
+- mlkm
+- nkn
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
+<<<<<<< HEAD
++ lala
+- teste123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ lala
+- teste123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ lala
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ lala
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ lala
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- Teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- 231
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- 231
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Teste
+=======
++ teste
+- teste
+- LALA
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+<<<<<<< HEAD
+- 123
+=======
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+- LALA
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+<<<<<<< HEAD
+- 123
+=======
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+- LALA
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+<<<<<<< HEAD
+- 123
+=======
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+- LALA
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+<<<<<<< HEAD
+- 123
+=======
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+- LALA
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- LALA
+<<<<<<< HEAD
+=======
+- LALA
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- LALA
+<<<<<<< HEAD
+=======
+- LALA
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- LALA
+<<<<<<< HEAD
+=======
+- LALA
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+<<<<<<< HEAD
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- 123
+- Teste
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- a
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- ss
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- lala
+- Lala
+- Lala
+=======
+- 123
+- LALA
+- LALA
+>>>>>>> 6fdf136ce10a6ef4e814abe9349cf6899c172a33
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Lala
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Lala
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Lala
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Lala
+- Lala
+
+! version = 2.0
+
++ *
+- Nao entendi
+- foi mal nao entendi
+- deu ruim!
+
++ teste
+- teste
+- 123
+- Lala
+- Lala
+>>>>>>> a88aea3383476136c7e413d91d6790982dc53dc8
 
