@@ -5,9 +5,8 @@ const message_container = document.querySelector('.messages');
 const form = document.querySelector('form');
 const input_box = document.querySelector('input');
 
-
 const brains = [
-  '../river/titulo.rive',
+  '../river/teste.rive',
 ];
 
 // const brains = [
@@ -15,7 +14,7 @@ const brains = [
 //   ];
 
 bot.loadFile(brains).then(botReady).catch(botNotReady);
-console.log('loadFile', bot.loadFile(brains).then(botReady).catch(botNotReady))
+// console.log('loadFile', bot.loadFile(brains).then(botReady).catch(botNotReady))
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
