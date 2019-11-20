@@ -54,12 +54,20 @@ class TrataObjeto {
         doc += "- Ótimo, me pergunte alguma coisa\n";
         doc += "- Que bom, estou bem também \n\n";
 
+        doc += "+ (tchau|ate logo|ate mais|ate mais ver|byebye|adeus|ate nunca mais)\n";
+        doc += "- Tchau, foi um prazer te ajudar\n";
+        doc += "- Byebye :)\n";
+        doc += "- Tchau amigo(a)\n\n";
+
+        // TCHAU, ATE MAIS, OK, OBRIGADO
+
         try {
             for (let i in this.obj) {
                 console.log(this.obj[i].question);
-                let str = this.obj[i].question;
+                let str = this.obj[i].question.toLowerCase();
                 let rtn = removeCaracteres(str);
-                doc += ('+ ' + rtn.toLowerCase());
+                console.log("removeCaracteres: ", rtn);
+                doc += ('+ ' + rtn);
                 for (let index in (this.obj[i].answers)) {
                     doc += ("\n- " + this.obj[i].answers[index].question);
                     this.obj[i].answers.length - 1 == index ? doc += "\n\n" : '';
@@ -67,11 +75,8 @@ class TrataObjeto {
             }
         } catch (error) {
             alert("Erro ao gerar o arquivo!");
-        } finally {
-
+            return;
         }
-
-        // console.log("finished: ", doc);
 
         $.ajax({
             url: '../controller/salvarTxt.php',
@@ -97,12 +102,13 @@ class TrataObjeto {
         });
 
         function removeCaracteres(str) {
-            console.log("removeCaracteres: ", str);
-            str = str.replace(/[ÀÁÂÃÄÅ]/g, "a");
             str = str.replace(/[àáâãäå]/g, "a");
-            str = str.replace(/[ÈÉÊË]/g, "e");
             str = str.replace(/[èéê]/g, "e");
-            str = str.replace('?', "-");
+            str = str.replace(/[íìîï]/ui, 'i');
+            str = str.replace(/[óòõôö]/ui, 'o');
+            str = str.replace(/[úùûü]/ui, 'u');
+            str = str.replace(/[ç]/ui, 'c');
+            str = str.replace(/[?!@#$%¨&*()_]/g, "");
 
             return str;
         }

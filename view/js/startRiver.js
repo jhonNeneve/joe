@@ -14,11 +14,6 @@ const brains = [
 //   ];
 
 bot.loadFile(brains).then(botReady).catch(botNotReady);
-<<<<<<< HEAD
-// console.log('loadFile', bot.loadFile(brains).then(botReady).catch(botNotReady))
-=======
-//console.log('loadFile', bot.loadFile(brains).then(botReady).catch(botNotReady))
->>>>>>> a88aea3383476136c7e413d91d6790982dc53dc8
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
