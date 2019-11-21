@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/cssBasic.css" ></link>
-	<link rel="stylesheet" type="text/css" href="css/cssHome.css" ></link>
 
 	<title>Chat Joe</title>
 </head>
@@ -94,108 +93,21 @@
       <a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat" onclick="newModule();">Salvar</a>
     </div>
   </div>
-
   <div id="footer"></div>
 </body>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 <script type="text/javascript" src="js/jsBasic.js"></script>
-<script type="text/javascript" src="js/jsHome.js"></script>
+<script type="text/javascript" src="js/jsModule.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-    $.ajax({
-      url: '../controller/module.php',
-      type: 'POST',
-      data:{
-        fun: 'getModules'
-      },
-      success: resp => {
-        let modules = JSON.parse(resp);
-        modules.forEach(iten => {
-          newLine(iten.nome, iten.descricao, iten.id);
-        });
-      }
-    });
-
-    $.ajax({
-      url: '../controller/module.php',
-      type: 'POST',
-      data:{
-        fun: 'getUsers'
-      },
-      success: resp => {
-        let users = JSON.parse(resp);
-        users.forEach(iten => {
-          $('#modal-permitidos').append('<option value="'+iten.id+'">'+iten.nome+'</option>');
-        });
-        $('#modal-permitidos').formSelect();
-      }
-    });
-
-    $('.modal-close').click(function(event) {
-      $('#modal-nome').val('');
-      $('#modal-descricao').val('');
-      $('#modal-permitidos').val('');
-      $('#modal-permitidos').formSelect();
-    });
-
-    M.AutoInit();
-    $('#loading').addClass('hide');
-  });
-
-  function newModule() {
-    var nome = $('#modal-nome').val();
-    var descricao = $('#modal-descricao').val();
-    var permitidos = $('#modal-permitidos').val();
-    $.ajax({
-      url: '../controller/module.php',
-      type: 'POST',
-      data:{
-        fun: 'addModule',
-        nome: nome,
-        descricao: descricao,
-        permitidos: permitidos
-      },
-      success: resp => {
-        if (resp != 'false') {
-          newLine(nome, descricao, parseInt(resp));
-        }
-      }
-    });
+function menu(menu) {
+  if (menu === 'home') {
+      window.location.replace('home.html');
+  } else if (menu === 'module') {
+      window.location.replace('module.html');
+  } else {
+      window.location.replace('flow.php');
   }
-
-  function newLine(nome, texto, id) {
-    $('#tbody').append(
-      '<tr id="line-' + id + '">\
-        <td>' + nome + '</td>\
-        <td class="truncate" style="width: 500px;">\
-          ' + texto + '\
-        </td>\
-          <td>\
-          <a class="waves-effect waves-red btn-flat tooltipped" data-position="top" data-tooltip="Excluir" onclick="deleteModule(' + id + ');">\
-            <i class="material-icons red-text">delete_outline</i>\
-          </a>\
-        </td>\
-      </tr>'
-    );
-  }
-
-  function deleteModule(id) {
-    console.log(id);
-    $.ajax({
-      url: '../controller/module.php',
-      type: 'POST',
-      data:{
-        fun: 'deleteModule',
-        id: id
-      },
-      success: resp => {
-        console.log(resp);
-        if (resp == '1') {
-          $('#line-'+id).remove();
-        }
-      }
-    });
-  }
+}
 </script>
 </html>

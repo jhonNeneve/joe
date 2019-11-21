@@ -1,164 +1,168 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/lib/materialize/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="css/lib/jquery/jquery.flowchart.min.css">
-</link>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/lib/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery/jquery.flowchart.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/cssBasic.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
+  <title>Chat Joe</title>
+  </head>
 
-<link rel="stylesheet" type="text/css" href="css/custom.css">
-<link rel="stylesheet" type="text/css" href="css/cssHome.css">
-<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
-<!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
-
-<title>Chat Joe</title>
-</head>
-
-<body class="p-b-50 p-relative">
-  <div id="loading">
-    <div class="preloader-wrapper big active">
-      <div class="spinner-layer spinner-blue-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div>
-        <div class="gap-patch">
-          <div class="circle"></div>
-        </div>
-        <div class="circle-clipper right">
-          <div class="circle"></div>
+  <body class="p-b-50 p-relative">
+    <div id="loading">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="header"></div>
-  <div id="menu"></div>
-  <section class="grey lighten-4" style="margin-left: 207px;min-height: calc(100vh - 114px);">
-    <nav>
-      <div class="nav-wrapper deep-purple lighten-1">
-        <div class="col s12 p-l-15">
-          <a href="home.html" class="breadcrumb">Home</a>
-          <a href="flow.html" class="breadcrumb">Fluxograma</a>
-        </div>
-      </div>
-    </nav>
-    <div class="row m-b-0">
-      <div class="col s12">
-        <div class="card m-t-15">
-          <div class="row m-0" style="height: 500px;">
-            <div class="col s8 p-0" style="position: relative;">
-              <a id="deletarOperador"
-              class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-out"
-              data-position="left" data-tooltip="Deletar" style="position: absolute; right: 10px; top: 10px;">
-              <i class="material-icons">delete_outline</i>
-            </a>
-            <a id="editarOperador" class="btn-floating btn-large waves-effect waves-light orange btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Editar" style="position: absolute; right: 10px; top: 50px;">
-              <i class="material-icons">edit</i>
-            </a>
-            <a id="saveOperador" class="btn-floating btn-large waves-effect waves-light green btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Salvar" style="position: absolute; right: 10px; top: 90px;">
-              <i class="material-icons">save</i>
-            </a>
-            <div id="chart_container">
-              <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
-            </div>
+    <div id="header"></div>
+    <div id="menu"></div>
+    <section class="grey lighten-4" style="margin-left: 207px;min-height: calc(100vh - 114px);">
+      <nav>
+        <div class="nav-wrapper deep-purple lighten-1">
+          <div class="col s12 p-l-15">
+            <a href="home.html" class="breadcrumb">Home</a>
+            <a href="flow.html" class="breadcrumb">Fluxograma</a>
           </div>
-          <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
-            <div class="row m-0" style="height: calc(100% - 52px);border-bottom: 1px solid #ddd;">
-              <div class="col s12 p-0" style="height: 100%;">
-                <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
-                  <li>
-                    <div class="collapsible-header p-10"><i class="material-icons">chrome_reader_mode</i>Informações
-                    gerais</div>
-                    <div class="collapsible-body p-10" style="max-height: 358px;">
-                      <div class="row m-0">
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inTitulo" type="text">
-                          <label for="inTitulo">Título</label>
+        </div>
+      </nav>
+      <div class="row m-b-0">
+        <div class="col s12">
+          <div class="card m-t-15">
+            <div class="row m-0" style="height: 500px;">
+              <div class="col s8 p-0" style="position: relative;">
+                <a id="deletarOperador"
+                class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped scale-transition scale-out"
+                data-position="left" data-tooltip="Deletar" style="position: absolute; right: 10px; top: 10px;">
+                <i class="material-icons">delete_outline</i>
+              </a>
+              <a id="editarOperador" class="btn-floating btn-large waves-effect waves-light orange btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Editar" style="position: absolute; right: 10px; top: 50px;">
+                <i class="material-icons">edit</i>
+              </a>
+              <a id="saveOperador" class="btn-floating btn-large waves-effect waves-light green btn-small tooltipped scale-transition scale-out" data-position="left" data-tooltip="Salvar" style="position: absolute; right: 10px; top: 90px;">
+                <i class="material-icons">save</i>
+              </a>
+              <div id="chart_container">
+                <div id="example_9" style="width: 2000px; height: 2000px; background: white;"></div>
+              </div>
+            </div>
+            <div class="col s4 p-0" style="height: 100%; border-left: 1px solid #ddd;">
+              <div class="row m-0" style="height: calc(100% - 52px);border-bottom: 1px solid #ddd;">
+                <div class="col s12 p-0" style="height: 100%;">
+                  <ul class="collapsible z-depth-0 m-0" style="border: 0; height: 100%;">
+                    <li>
+                      <div class="collapsible-header p-10"><i class="material-icons">chrome_reader_mode</i>Informações
+                      gerais</div>
+                      <div class="collapsible-body p-10" style="max-height: 358px;">
+                        <div class="row m-0">
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inTitulo" type="text">
+                            <label for="inTitulo">Título</label>
+                          </div>
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inDescricao" type="text">
+                            <label for="inDescricao">Descrição</label>
+                          </div>
+                          <div class="input-field col s12">
+                            <select id="seModulo">
+                              <option value="" disabled selected>Selecione</option>
+                            </select>
+                            <label>Módulo</label>
+                          </div>
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inLargura" type="number" minlength="500" value="2000">
+                            <label for="inLargura">Largura</label>
+                          </div>
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inAltura" type="number" minlength="500" value="2000">
+                            <label for="inAltura">Altura</label>
+                          </div>
                         </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inDescricao" type="text">
-                          <label for="inDescricao">Descrição</label>
-                        </div>
-                        <div class="input-field col s12">
-                          <select id="seModulo">
-                            <option value="" disabled selected>Selecione</option>
-                          </select>
-                          <label>Módulo</label>
-                        </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inLargura" type="number" minlength="500" value="2000">
-                          <label for="inLargura">Largura</label>
-                        </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inAltura" type="number" minlength="500" value="2000">
-                          <label for="inAltura">Altura</label>
+                      </div>
+                    </li>
+                    <li style="max-height: calc(100% - 110px);">
+                      <div class="collapsible-header p-10"><i class="material-icons">question_answer</i>Novo operador
+                      </div>
+                      <div class="collapsible-body p-10" style="max-height: 358px;">
+                        <div class="row m-0">
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <select id="seTipo">
+                              <option value="1">Pergunta</option>
+                              <option value="2">Afirmação</option>
+                            </select>
+                            <label>Tipo</label>
+                          </div>
+                          <div class="input-field col s12 m-0 m-t-10">
+                            <input id="inFrase" type="text">
+                            <label for="inFrase">Frase</label>
+                          </div>
+                          <div id="divInput" class="scale-transition">
+                            <div class="input-field col s12 m-0 m-t-10">
+                              <a class="waves-effect waves-teal btn-flat right" id="newInSaida">
+                                <i class="material-icons">add</i>
+                              </a>
+                              <h6 class="deep-purple-text">Respostas</h6>
+                              <hr style="border-color: #673ab7;">
+                            </div>
+                            <div id="inSaida"></div>
+                          </div>
+                          <div class="col s12 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
+                            <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle"
+                            style="height: 32.4px; line-height: 23px; text-align: center;width: 100%;">
+                            Operador
+                          </div>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li style="max-height: calc(100% - 110px);">
-                    <div class="collapsible-header p-10"><i class="material-icons">question_answer</i>Novo operador
-                    </div>
-                    <div class="collapsible-body p-10" style="max-height: 358px;">
-                      <div class="row m-0">
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <select id="seTipo">
-                            <option value="1">Pergunta</option>
-                            <option value="2">Afirmação</option>
-                          </select>
-                          <label>Tipo</label>
-                        </div>
-                        <div class="input-field col s12 m-0 m-t-10">
-                          <input id="inFrase" type="text">
-                          <label for="inFrase">Frase</label>
-                        </div>
-                        <div id="divInput" class="scale-transition">
-                          <div class="input-field col s12 m-0 m-t-10">
-                            <a class="waves-effect waves-teal btn-flat right" id="newInSaida">
-                              <i class="material-icons">add</i>
-                            </a>
-                            <h6 class="deep-purple-text">Respostas</h6>
-                            <hr style="border-color: #673ab7;">
-                          </div>
-                          <div id="inSaida"></div>
-                        </div>
-                        <div class="col s12 m-0 m-t-10 p-t-10" style="border-top: 1px solid #ddd;">
-                          <div id="divOperador" class="draggable_operator ui-draggable ui-draggable-handle"
-                          style="height: 32.4px; line-height: 23px; text-align: center;width: 100%;">
-                          Operador
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="row m-0">
-            <div class="col s12 p-0">
-              <a id="btnSalvar" class="btn btn-small waves-effect waves-light d-block m-10">Salvar</a>
+            <div class="row m-0">
+              <div class="col s12 p-0">
+                <a id="btnSalvar" class="btn btn-small waves-effect waves-light d-block m-10">Salvar</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</section>
-<div id="footer"></div>
-</body>
-<script type="text/javascript" src="js/lib/jquery/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/lib/jquery/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/lib/jquery/jquery.panzoom.min.js"></script>
-<script type="text/javascript" src="js/lib/jquery/jquery.mousewheel.min.js"></script>
-<script type="text/javascript" src="js/lib/jquery.flowchart/jquery.flowchart.min.js"></script>
-<script type="text/javascript" src="js/lib/materialize/materialize.min.js"></script>
-<script type="text/javascript" src="js/trataObjeto.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/jsBasic.js"></script>
-<script type="text/javascript" src="js/jsHome.js"></script>
+  </section>
+  <div id="footer"></div>
+  </body>
+  <script type="text/javascript" src="js/lib/jquery/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery/jquery.panzoom.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.flowchart/jquery.flowchart.min.js"></script>
+  <script type="text/javascript" src="js/lib/materialize/materialize.min.js"></script>
+  <script type="text/javascript" src="js/trataObjeto.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/jsBasic.js"></script>
 <script type="text/javascript">
+	function menu(menu) {
+    if (menu === 'home') {
+        window.location.replace('home.html');
+    } else if (menu === 'module') {
+        window.location.replace('module.html');
+    } else {
+        window.location.replace('flow.php');
+    }
+  }
   $flowchart = $('#example_9');
   hash = <?php echo isset($_GET['hash']) ? $_GET['hash'] : 0; ?>;
 
