@@ -8,7 +8,7 @@
 - Faça outra pergunta
 - Não entendi :/
 
-+ (voce e um|voce e|acho que voce e um|sei que voce e) bot
++ ((vc|voce) e um|(voce|vc) e|acho (que|q) (voce|vc) e um|sei (que|q) (voce|vc) e) bot
 - Oops, você descobriu!
 - Xiuu, não espalha
 - Já que você descobriu, esse vai ser nosso segredo
@@ -20,24 +20,25 @@
 - Hey, como você está?
 - Oie, tudo certo?
 
-+ (tudo bem|tudo certo) e voce
++ (tudo bem|tudo certo) e (voce|vc)
 - Que bom, me pergunte alguma coisa 
 - Maravilha, faça uma pergunta 
 - Ótimo, me pergunte alguma coisa
 - Que bom, estou bem também 
 
-+ como (voce esta|vai voce)
++ como ((voce|vc) esta|vai (voce|vc))
 - Estou bem
 - Mais ou menos, muito 0 e 1 na cabeça 
 - Muito bem, obrigado por perguntar
 - Estou muito bem, obrigado
 
-+ estou bem
++ ((to|estou) bem|(to|estou) de boa|(ta|to|estou) suave|(to|estou) tranquilo|ta de boa)
 - Que bom, me pergunte alguma coisa 
 - Maravilha, faça uma pergunta 
 - Ótimo, me pergunte alguma coisa
 - Que bom, estou bem também 
 
-+ lale
-- asdasd
-
++ (tchau|ate logo|ate mais|ate mais ver|byebye|adeus|ate nunca mais)
+- Tchau, foi um prazer te ajudar
+- Byebye :)
+- Tchau amigo(a)

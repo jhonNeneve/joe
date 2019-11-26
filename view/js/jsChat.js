@@ -11,7 +11,9 @@ var sendChannel,
 	receiveChannel,
 	chatWindow = document.querySelector('.chat-window'),
 	chatWindowMessage = document.querySelector('.chat-window-message'),
-	chatThread = document.querySelector('.chat-thread');
+    chatThread = document.querySelector('.chat-thread');
+    
+    
 
 // Create WebRTC connection
 createConnection();

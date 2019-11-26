@@ -1,19 +1,35 @@
 console.log('CHEGOU');
 
-let bot = new RiveScript();
+bot = new RiveScript();
 const message_container = document.querySelector('.messages');
 const form = document.querySelector('form');
 const input_box = document.querySelector('input');
-
-const brains = [
-  '../river/teste.rive',
+titulos = false;
+brains = [
+  // '../river/teste.rive',
+  '../river/padrao.rive'
 ];
 
-// const brains = [
-//     'https://gist.githubusercontent.com/awesammcoder/91e0f6c527bfdc03b8815289ca4af150/raw/6410ce00b7e1ea0dbd28be03b6eaab64252a841d/brain.rive'
-//   ];
+$.ajax({
+  url: '../controller/chat.php',
+  type: 'post',
+  data: {
+    'fun': 'getTitulos'
+  },
+  success: function (resp) {
+    console.log('resp: ', JSON.parse(resp));
+    resp = JSON.parse(resp);
 
-bot.loadFile(brains).then(botReady).catch(botNotReady);
+    resp.forEach(function (item) {
+      console.log(item);
+      brains.push('../river/' + item + ".rive");
+    });
+
+    bot.loadFile(brains).then(botReady).catch(botNotReady);
+  }
+});
+
+console.log("teste de brains: ", brains);
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -22,29 +38,39 @@ form.addEventListener('submit', (e) => {
 });
 
 function botReply(message) {
- // console.log("bot reply", message);
-  $('.chat-thread').append(`<li>${message}</li>`)
-  // message_container.innerHTML += `<div class="bot">${message}</div>`;
-  location.href = '#edge';
+  $('.chat-thread').append(`<li>${message}</li>`);
+  chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
 }
 
 function selfReply(message) {
-  //console.log('message: ', message)
+  let msg = removeCaracteres(message);
+
   $('.chat-thread').append(`<li>${message}</li>`)
-  // message_container.innerHTML += `<div class="self">${message}</div>`;
   location.href = '#edge';
 
-  bot.reply("local-user", message).then(function (reply) {
-    botReply(reply);
+  bot.reply("local-user", msg).then(function (reply) {
+    botReply(reply)
   });
 }
 
 function botReady() {
   bot.sortReplies();
-  // botReply('Hello');
 }
 
 function botNotReady(err) {
   console.log("An error has occurred.", err);
 
+}
+
+function removeCaracteres(str) {
+  str = str.replace(/[àáâãäå]/g, "a");
+  str = str.replace(/[èéê]/g, "e");
+  str = str.replace(/[íìîï]/ui, 'i');
+  str = str.replace(/[óòõôö]/ui, 'o');
+  str = str.replace(/[úùûü]/ui, 'u');
+  str = str.replace(/[ç]/ui, 'c');
+  str = str.replace(/[?!@#$%¨&*()_]/g, "");
+
+  return str;
 }

@@ -7,6 +7,17 @@ class Flow extends Conexao{
 		$this->db = Conexao::getInstance();
 	}
 
+	function getTitulos(){
+		$contas = $this->db->prepare("SELECT titulo FROM fluxo");
+		$contas->execute();
+		$titulo = array();
+		while($ln = $contas->fetch(PDO::FETCH_ASSOC)) {
+			$titulo[] = $ln['titulo'];
+		}
+
+		return $titulo;
+	}
+
 	function newFlow($titulo, $descricao, $modulo, $largura, $altura, $fluxo){
 		$contas = $this->db->prepare("INSERT INTO fluxo (titulo, descricao, modulo, largura, altura, fluxo) VALUES (:titulo, :descricao, :modulo, :largura, :altura, :fluxo)");
 		$contas->bindValue(":titulo", $titulo);
