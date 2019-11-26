@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
 	</link>
 	<title>Chat Joe</title>
+
 </head>
 
 <body>
@@ -36,6 +37,5 @@
 
 <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
 <script type="text/javascript" src="js/startRiver.js"></script>
-
 
 </html>

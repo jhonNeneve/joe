@@ -7,8 +7,6 @@
 // The below JS has been adapted from this excellent RTCDataChannel demo
 // http://simpl.info/rtcdatachannel/
 
-
-
 var sendChannel, 
 	receiveChannel,
 	chatWindow = document.querySelector('.chat-window'),

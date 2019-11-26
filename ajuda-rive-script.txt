@@ -1,0 +1,77 @@
++ my name is *
+- <set name=<formal>>I will remember to call you <get name>.
+
++ (what is|do you know) my name
+* <get name> != undefined => Yes, your name is <get name>!
+- I don't know your name.
+
+SEMPRE NO COMEÇO DO COD
+! version = 2.0
+
+== COMANDOS ==
+
++comando é como você define um gatilho (SEMPRE com letras minúsculas)
+
+-comando é como você define uma resposta para um gatilho.
+
+--- RESPOSTAS ALEATORIAS
+	+ como você está
+	- Estou ótimo, como você está?
+	- Bom você?
+
+--- DEFINIR PESO DA RESPOSTAS (TAGS não setadas weight têm automaticamente um peso 1)
++ greetings
+- Hi there!{weight=20}   ("Olá!" será escolhido 25 vezes em 46)
+- Hello!{weight=25}
+- Yos kyoco duckeb!
+
+--- CONTINUAÇÃO DE LINHA (^)
+^comando ( Continuação ).
+
++ conte-me um poema 
+- A pequena senhorita Muffit estava sentada em seu tufo, \ n 
+^ De uma maneira indiferente. \ n 
+
+---USANDO CORINGAS
+Você pode escrever gatilhos para perguntas comuns como "quem é", "onde está" e "o que é" usando caracteres curinga; portanto, 
+se o usuário perguntar ao seu bot sobre algo que ele não possui um gatilho especial para manipular, 
+ele poderá fornecer uma resposta "genérica" ​​que será pelo menos um pouco relevante para a pergunta.
+
++ meu nome é * 
+- Prazer em conhecê-lo, <estrela1>! 
+
++ * me disse para dizer * 
+- Por que <star1> lhe dizia para dizer "<star2>"? 
+- Você disse "<star2>" depois que o <star1> mandou? 
+
++ eu tenho * anos 
+- Muitas pessoas têm <estrela1> anos.
+
+---GATILHO CATCH
++ * 
+- Não sei como responder a isso. 
+- Tente fazer sua pergunta de uma maneira diferente. 
+- Vamos mudar de assunto.
+
+---CURINGAS ESPECIALIZADOS
+# SOMENTE NÚMEROS
+_ CARACTERES SEM NUMERO E ESPAÇO
+
++ eu tenho # anos 
+- Muitas pessoas têm <estrela> anos. 
+
++ Tenho _ anos 
+- Diga-me novamente, mas com um número dessa vez. 
+
+---ALTERNATIVAS E OPCIONAIS
++ what is your (home|office|cell) number
+- You can reach me at: 1 (800) 555-1234.
+
++ i am (really|very|super) tired
+- I'm sorry to hear that you are <star> tired.
+
++ i (like|love) the color *
+- What a coincidence! I <star1> that color too!
+- I also have a soft spot for the color <star2>!
+- Really? I <star1> the color <star2> too!
+- Oh I <star1> <star2> too!
