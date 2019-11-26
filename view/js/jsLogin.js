@@ -35,8 +35,6 @@ $("form").submit(function(e) {
       senha: senha
     },
     success: function(result){
-      console.log(result);
-      return;
       if(result != 'false'){
         window.location.replace(result);
       }       

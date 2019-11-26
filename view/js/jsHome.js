@@ -18,9 +18,9 @@ $(document).ready(function () {
 
 function menu(menu) {
     if (menu === 'home') {
-        window.location.replace('home.html');
+        window.location.replace('home.php');
     } else if (menu === 'module') {
-        window.location.replace('module.html');
+        window.location.replace('module.php');
     } else {
         window.location.replace('flow.php');
     }
