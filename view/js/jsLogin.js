@@ -22,6 +22,22 @@ $("form").submit(function(e) {
         senha = (valor.name == 'senha') && valor.value;
     }
 
+<<<<<<< HEAD
+ $.ajax({
+    method: "POST",
+    url: "../controller/login.php",
+    data: {
+      fun: 'login',
+      email: email,
+      senha: senha
+    },
+    success: function(result){
+      if(result != 'false'){
+        window.location.replace(result);
+      }       
+    }
+  });  
+=======
     $.ajax({
         method: "POST",
         url: "../controller/login.php",
@@ -35,4 +51,5 @@ $("form").submit(function(e) {
             if(result != 'false' ? window.location.replace(result) : '');   
         }
     });  
+>>>>>>> 3a1fe22648d0eda93f252e6e17b5f0205fdf0b32
 });

@@ -1,3 +1,4 @@
+<?php include '../controller/core.php'; ?>
 <!DOCTYPE html>
 <html>
 
