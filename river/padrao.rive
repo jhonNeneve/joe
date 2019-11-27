@@ -32,7 +32,7 @@
 - Muito bem, obrigado por perguntar
 - Estou muito bem, obrigado
 
-+ ((to|estou) bem|(to|estou) de boa|(ta|to|estou) suave|(to|estou) tranquilo|ta de boa)
++ ((to|estou) bem|(to|estou) de boa|(ta|	to|estou) suave|(to|estou) tranquilo|ta de boa)
 - Que bom, me pergunte alguma coisa 
 - Maravilha, faça uma pergunta 
 - Ótimo, me pergunte alguma coisa
@@ -42,3 +42,8 @@
 - Tchau, foi um prazer te ajudar
 - Byebye :)
 - Tchau amigo(a)
+
++ (obrigado|vlw|thanks)
+- Foi um prazer te ajudar
+- Disponha :)
+- Estou aqui para ajudar :)

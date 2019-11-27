@@ -49,7 +49,7 @@ function selfReply(message) {
   $('.chat-thread').append(`<li>${message}</li>`)
   location.href = '#edge';
 
-  bot.reply("local-user", msg).then(function (reply) {
+  bot.reply("local-user", msg.toLowerCase()).then(function (reply) {
     botReply(reply)
   });
 }
