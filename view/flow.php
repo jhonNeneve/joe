@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="css/lib/jquery/jquery.flowchart.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" type="text/css" href="css/cssBasic.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/lib/jquery.flowchart/jquery.flowchart.min.css"></link> -->
-  <title>Chat Joe</title>
+    <!-- Ícone -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/joe-16.png">
+    <title>Chat Joe</title>
   </head>
 
   <body class="p-b-50 p-relative">
@@ -35,8 +36,8 @@
       <nav>
         <div class="nav-wrapper deep-purple lighten-1">
           <div class="col s12 p-l-15">
-            <a href="home.html" class="breadcrumb">Home</a>
-            <a href="flow.html" class="breadcrumb">Fluxograma</a>
+            <a href="home.php" class="breadcrumb">Home</a>
+            <a href="flow.php" class="breadcrumb">Fluxograma</a>
           </div>
         </div>
       </nav>
@@ -157,9 +158,9 @@
 <script type="text/javascript">
 	function menu(menu) {
     if (menu === 'home') {
-        window.location.replace('home.html');
+        window.location.replace('home.php');
     } else if (menu === 'module') {
-        window.location.replace('module.html');
+        window.location.replace('module.php');
     } else {
         window.location.replace('flow.php');
     }
@@ -300,6 +301,7 @@
         },
         success: resp => {
           var arrayTeste = [];
+          console.log(fluxo.operators);
           Object.entries(fluxo.operators).forEach((item) => {
             if (!isEmpty(item[1].properties.outputs)) {
               var newAttr = {
@@ -319,7 +321,8 @@
           });
           Object.entries(fluxo.links).forEach((item) => {
             for (var i = 0; i < arrayTeste.length; i++) {
-              if (arrayTeste[i].index == item[1].fromOperator) {
+              if (arrayTeste[i].index == item[1].fromOperator &&
+                  Object.keys(fluxo.operators[item[1].toOperator].properties.outputs).length == 0) {
                 arrayTeste[i].answers.push({
                   question: fluxo.operators[item[1].toOperator].properties.title,
                   priority: "1"
@@ -328,6 +331,9 @@
               }
             }
           });
+          console.log(arrayTeste);
+          console.log(fluxo.operators);
+          console.log(fluxo.links);
 
           // TRATAMENTO DE OBJETO
           let trataObj = new TrataObjeto(arrayTeste, $('#inTitulo').val());

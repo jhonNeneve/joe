@@ -10,6 +10,8 @@
 	</link>
 	<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
 	</link>
+  <!-- Ícone -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/joe-16.png">
 	<title>Chat Joe</title>
 
 </head>

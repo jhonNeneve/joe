@@ -68,7 +68,7 @@ function deleteFlow(fluxoId){
             if(data == 'true'){
                 M.toast({html: 'Deletado com sucesso!'})
                 setTimeout(function(){ 
-                    window.location.replace('home.html');
+                    window.location.replace('home.php');
                 }, 3000);
             }
         }

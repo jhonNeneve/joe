@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/cssBasic.css" ></link>
-
+  <!-- Ícone -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/joe-16.png">
 	<title>Chat Joe</title>
 </head>
 <body class="p-b-50 p-relative">
@@ -30,8 +31,8 @@
 		<nav>
 			<div class="nav-wrapper deep-purple lighten-1">
 				<div class="col s12 p-l-15">
-					<a href="home.html" class="breadcrumb">Home</a>
-					<a href="module.html" class="breadcrumb">Módulo</a>
+					<a href="home.php" class="breadcrumb">Home</a>
+					<a href="module.php" class="breadcrumb">Módulo</a>
 				</div>
 			</div>
 		</nav>
@@ -103,9 +104,9 @@
 <script type="text/javascript">
 function menu(menu) {
   if (menu === 'home') {
-      window.location.replace('home.html');
+      window.location.replace('home.php');
   } else if (menu === 'module') {
-      window.location.replace('module.html');
+      window.location.replace('module.php');
   } else {
       window.location.replace('flow.php');
   }

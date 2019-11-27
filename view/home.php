@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="css/cssHome.css">
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
 		<link rel="stylesheet" type="text/css" href="css/cssBasic.css">
+    <!-- Ícone -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/joe-16.png">
 		<title>Chat Joe</title>
 	</head>
 
@@ -44,9 +46,9 @@
 	<script type="text/javascript">
 	function menu(menu) {
 		if (menu === 'home') {
-			window.location.replace('home.html');
+			window.location.replace('home.php');
 		} else if (menu === 'module') {
-			window.location.replace('module.html');
+			window.location.replace('module.php');
 		} else {
 			window.location.replace('flow.php');
 		}
