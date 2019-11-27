@@ -3,6 +3,10 @@ switch ($_POST['fun']) {
 	case 'login':
 	login();
 	break;
+
+	case 'logoff':
+	logoff();
+	break;
 }
 
 function login() {
@@ -39,7 +43,6 @@ function logoff(){
         $params["secure"], $params["httponly"]
     );
 	}
-	session_destroy();
-	header('Location: '.__DIR__.'/login.html');
+	echo 'login.html';
 }
 ?>

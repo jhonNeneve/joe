@@ -14,9 +14,6 @@ $(document).ready(function () {
       });
 });
 
-<<<<<<< HEAD
-
-
 function menu(menu) {
     if (menu === 'home') {
         window.location.replace('home.php');
@@ -27,8 +24,6 @@ function menu(menu) {
     }
 }
 
-=======
->>>>>>> 3a1fe22648d0eda93f252e6e17b5f0205fdf0b32
 function montaCards(title, description, id){
     var address = 'flow.php?hash='+id;
     var cardFlow = document.getElementById("cardFlow");
@@ -75,5 +70,5 @@ function deleteFlow(fluxoId){
                 }, 3000);
             }
         }
-    })
+    });
 };

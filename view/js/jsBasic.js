@@ -17,7 +17,7 @@ header.innerHTML += '<div class="navbar-fixed">' +
                         '<div class="nav-wrapper deep-purple">' +
                           '<a href="#" class="brand-logo center white-text ">Joe</a>' +
                           '<ul class="right hide-on-med-and-down">' +
-                            '<li><a href="login.html" class="white-text">Sair</a></li>' +
+                            '<li><a href="javascript:void(0);" onclick="logoff();" class="white-text">Sair</a></li>' +
                           '</ul>' +
                         '</div>' +
                       '</nav>' +
@@ -46,3 +46,15 @@ if(footer != null){
 //                           '</div>' +
 //                         '</div>' +
 //                       '</div>';
+function logoff() {
+  $.ajax({
+    url: '../controller/login.php',
+    type: 'POST',
+    data: {fun: 'logoff'},
+    success: function(result){
+      if(result != 'false'){
+        window.location.replace(result);
+      }       
+    }
+  });
+}
